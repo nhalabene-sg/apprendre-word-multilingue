@@ -147,12 +147,20 @@
   }
 
   function sheetHTML(formulaMode) {
-    const values = [
-      ['', 'A', 'B', 'C', 'D', 'E'], ['1', t.scene.product, t.scene.price, t.scene.quantity, t.scene.total, t.scene.status],
-      ['2', t.scene.notebook, '3,50', '4', formulaMode ? '=B2*C2' : '14,00', t.scene.paid], ['3', t.scene.pen, '1,20', '10', '12,00', t.scene.paid],
-      ['4', t.scene.folder, '4,90', '3', '14,70', t.scene.pending]
-    ];
-    return `<div class="sheet">${values.flatMap((row, r) => row.map((cell, c) => `<div class="cell ${r === 0 || c === 0 ? 'head' : ''} ${r === 2 && c === 4 ? 'selected' : ''}">${escapeHTML(cell)}</div>`)).join('')}</div>`;
+    const columns = ['A', 'B', 'C', 'D', 'E', 'F'];
+    const rows = [1, 2, 3, 4, 5, 7, 9, 10, 11, 20];
+    const values = {
+      A1: t.scene.product, B1: t.scene.price, C1: t.scene.quantity, D1: t.scene.total, E1: t.scene.status,
+      A2: t.scene.notebook, B2: '3,50', C2: '4', D2: formulaMode ? '=B2*C2' : '14,00', E2: t.scene.paid,
+      A3: t.scene.pen, B3: '1,20', C3: '10', D3: '12,00', E3: t.scene.paid,
+      A4: t.scene.folder, B4: '4,90', C4: '3', D4: '14,70', E4: t.scene.pending
+    };
+    const headers = `<div class="cell head"></div>${columns.map(column => `<div class="cell head" data-column="${column}">${column}</div>`).join('')}`;
+    const cells = rows.map(row => `<div class="cell head" data-row="${row}">${row}</div>${columns.map(column => {
+      const reference = `${column}${row}`;
+      return `<div class="cell" data-cell="${reference}">${escapeHTML(values[reference] || '')}</div>`;
+    }).join('')}`).join('');
+    return `<div class="sheet-shell"><div class="cell-readout"><span>${escapeHTML(t.selectedCell)}</span><strong id="sceneCellRef">—</strong></div><div class="sheet-viewport"><div class="sheet">${headers}${cells}</div></div></div>`;
   }
 
   function wordScene(item) {
@@ -246,6 +254,34 @@
       ? [t.actions.file, t.actions.home, t.actions.insert, t.actions.pageLayout, t.actions.formulas, t.actions.data, t.actions.review]
       : [t.actions.file, t.actions.home, t.actions.insert, t.actions.design, t.actions.layout, t.actions.references, t.actions.mailings, t.actions.review, t.actions.view];
     return tabs.map((label, index) => `<span data-ribbon="${escapeHTML(label)}"${index === 1 ? ' class="default-tab"' : ''}>${escapeHTML(label)}</span>`).join('');
+  }
+
+  function setupGlobalNavigation() {
+    const topbar = document.querySelector('.topbar');
+    const actions = document.querySelector('.top-actions');
+    const otherCourseLink = document.querySelector('.sidebar-footer a');
+    if (!topbar || !actions || !otherCourseLink || document.querySelector('#globalNavigation')) return;
+    const deployed = /\/(?:pt-PT|fr-FR|es-ES|en-GB)\//i.test(window.location.pathname) && !/Portugu%C3%AAs|Fran%C3%A7ais|Espa%C3%B1ol|English/i.test(window.location.pathname);
+    const languages = [
+      { locale: 'pt-PT', folder: '01 - Português de Portugal (pt-PT)', label: 'Português de Portugal' },
+      { locale: 'fr-FR', folder: '02 - Français (fr-FR)', label: 'Français' },
+      { locale: 'es-ES', folder: '03 - Español (es-ES)', label: 'Español' },
+      { locale: 'en-GB', folder: '04 - English (en-GB)', label: 'English' }
+    ];
+    const languageOptions = languages.map(language => `<option value="${deployed ? `../${language.locale}/index.html` : `../../${language.folder}/${course.name}/index.html`}"${language.locale === t.locale ? ' selected' : ''}>${escapeHTML(language.label)}</option>`).join('');
+    const navigation = document.createElement('nav');
+    navigation.id = 'globalNavigation';
+    navigation.className = 'global-navigation';
+    navigation.setAttribute('aria-label', t.completeNavigation);
+    navigation.innerHTML = `
+      <a class="portal-home" href="${deployed ? '../index.html' : '../../index.html'}" title="${escapeHTML(t.portalHome)}"><span aria-hidden="true">⌂</span><b>${escapeHTML(t.portalHome)}</b></a>
+      <div class="course-switch" aria-label="${escapeHTML(t.switchCourse)}">
+        ${course.slug === 'excel' ? '<strong aria-current="page">X</strong>' : `<a href="${escapeHTML(otherCourseLink.getAttribute('href'))}" title="${escapeHTML(t.openExcel)}">X</a>`}
+        ${course.slug === 'word' ? '<strong aria-current="page">W</strong>' : `<a href="${escapeHTML(otherCourseLink.getAttribute('href'))}" title="${escapeHTML(t.openWord)}">W</a>`}
+      </div>
+      <label class="language-switcher"><span>${escapeHTML(t.switchLanguage)}</span><select id="languageSwitcher" aria-label="${escapeHTML(t.switchLanguage)}">${languageOptions}</select></label>`;
+    topbar.insertBefore(navigation, actions);
+    $('#languageSwitcher').addEventListener('change', event => { window.location.href = event.target.value; });
   }
 
   function extractRawShortcuts(item) {
@@ -442,6 +478,8 @@
     const speed = $('#coachSpeed');
     const doneButton = $('#coachDone');
     const ribbonTabs = [...document.querySelectorAll('[data-ribbon]')];
+    const sheetCells = [...document.querySelectorAll('[data-cell]')];
+    const cellReadout = $('#sceneCellRef');
     const block = $('#guidedBlock');
     let step = 0;
     let playing = false;
@@ -496,6 +534,22 @@
       doneButton.setAttribute('aria-pressed', String(doneSteps.has(step)));
       preview.dataset.demoZone = step === 0 ? 'ribbon' : step === targets.length - 1 ? 'result' : 'workspace';
       ribbonTabs.forEach(tab => tab.classList.toggle('tab-active', details.where.toLocaleLowerCase(t.locale).includes(tab.textContent.toLocaleLowerCase(t.locale))));
+      const referenceMatch = `${details.where} ${details.action}`.match(/\b([A-F])\s*(1|2|3|4|5|7|9|10|11|20)\b/i);
+      const reference = referenceMatch ? `${referenceMatch[1].toUpperCase()}${referenceMatch[2]}` : '';
+      let selectedCell;
+      sheetCells.forEach(cell => {
+        const active = Boolean(reference) && cell.dataset.cell === reference;
+        cell.classList.toggle('selected', active);
+        if (active) selectedCell = cell;
+      });
+      if (cellReadout) cellReadout.textContent = reference || '—';
+      if (selectedCell) {
+        const viewport = selectedCell.closest('.sheet-viewport');
+        if (viewport) {
+          viewport.scrollTop = Math.max(0, selectedCell.offsetTop - 82);
+          viewport.scrollLeft = Math.max(0, selectedCell.offsetLeft - 120);
+        }
+      }
       moveCursor(targets[step]);
     };
     const advance = (manual = true) => {
@@ -630,6 +684,7 @@
 
   const initialColorScheme = document.documentElement.dataset.colorScheme === 'dark' ? 'dark' : 'light';
   applyColorScheme(initialColorScheme);
+  setupGlobalNavigation();
 
   function closeMenu() {
     document.body.classList.remove('menu-open');

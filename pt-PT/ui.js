@@ -83,6 +83,13 @@ window.COURSE_UI = {
   guideComplete: 'Todos os passos visuais foram reproduzidos no seu PC.',
   keyboardShortcuts: 'Atalhos desta lição',
   keyboardHelp: 'Prima as teclas ligadas por + ao mesmo tempo. As designações abaixo correspondem ao teclado português (Portugal).',
+  selectedCell: 'Célula indicada',
+  completeNavigation: 'Navegação completa do curso',
+  portalHome: 'Todos os cursos',
+  switchCourse: 'Mudar entre Excel e Word',
+  switchLanguage: 'Escolher língua',
+  openExcel: 'Abrir o curso Excel',
+  openWord: 'Abrir o curso Word',
   keyboardKeys: {
     ctrl: 'Ctrl', shift: 'Shift', alt: 'Alt', enter: 'Enter', tab: 'Tab', arrow: 'Seta', space: 'Espaço', escape: 'Esc'
   },

@@ -151,6 +151,13 @@ window.COURSE_UI = {
   "guideComplete": "Toutes les étapes visuelles ont été reproduites sur votre PC.",
   "keyboardShortcuts": "Raccourcis de cette leçon",
   "keyboardHelp": "Appuyez en même temps sur les touches reliées par +. Les noms ci-dessous correspondent au clavier français.",
+  "selectedCell": "Cellule indiquée",
+  "completeNavigation": "Navigation complète du cours",
+  "portalHome": "Tous les cours",
+  "switchCourse": "Passer entre Excel et Word",
+  "switchLanguage": "Choisir la langue",
+  "openExcel": "Ouvrir le cours Excel",
+  "openWord": "Ouvrir le cours Word",
   "keyboardKeys": {
     "ctrl": "Ctrl",
     "shift": "Maj",

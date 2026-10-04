@@ -151,6 +151,13 @@ window.COURSE_UI = {
   "guideComplete": "All visual steps have been reproduced on your PC.",
   "keyboardShortcuts": "Shortcuts in this lesson",
   "keyboardHelp": "Press keys joined by + at the same time. The names below match a British English keyboard.",
+  "selectedCell": "Indicated cell",
+  "completeNavigation": "Complete course navigation",
+  "portalHome": "All courses",
+  "switchCourse": "Switch between Excel and Word",
+  "switchLanguage": "Choose language",
+  "openExcel": "Open the Excel course",
+  "openWord": "Open the Word course",
   "keyboardKeys": {
     "ctrl": "Ctrl",
     "shift": "Shift",
