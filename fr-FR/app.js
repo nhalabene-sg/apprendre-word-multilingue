@@ -43,6 +43,7 @@
   let current = Math.min(Number(saved.current) || 0, flatLessons.length - 1);
   let completed = new Set(Array.isArray(saved.completed) ? saved.completed : []);
   let practiceState = saved.practice && typeof saved.practice === 'object' ? saved.practice : {};
+  let guideState = saved.guide && typeof saved.guide === 'object' ? saved.guide : {};
   let selectedLevel = 'all';
   let toastTimer;
   let coachTimer;
@@ -67,7 +68,7 @@
   }
 
   function save() {
-    storage.set(storageKey, JSON.stringify({ current, completed: [...completed], practice: practiceState }));
+    storage.set(storageKey, JSON.stringify({ current, completed: [...completed], practice: practiceState, guide: guideState }));
   }
 
   function lessonId(index) {
@@ -288,9 +289,9 @@
     const dots = item.steps.map((_, index) => `<button type="button" class="guide-dot" data-dot="${index}" aria-label="${escapeHTML(format(t.stepLabel, { current: index + 1, total: item.steps.length }))}"></button>`).join('');
     const first = stepDetails(item, 0);
     const interfaceNote = format(t.interfaceLanguageNote, { language: t.languageName, locale: t.locale });
-    const controls = `<div class="demo-toolbar"><div class="locale-card"><span>${escapeHTML(t.interfaceLanguage)}</span><strong>${escapeHTML(t.languageName)} · ${escapeHTML(t.locale)}</strong><small>${escapeHTML(interfaceNote)}</small></div><div class="demo-buttons"><button id="coachPlay" type="button">▶ ${escapeHTML(t.playDemo)}</button><button id="coachPause" type="button" disabled>Ⅱ ${escapeHTML(t.pauseDemo)}</button></div></div>`;
+    const controls = `<div class="demo-toolbar"><div class="locale-card"><span>${escapeHTML(t.interfaceLanguage)}</span><strong>${escapeHTML(t.languageName)} · ${escapeHTML(t.locale)}</strong><small>${escapeHTML(interfaceNote)}</small></div><div class="demo-control-group"><label for="coachSpeed">${escapeHTML(t.animationSpeed)}</label><select id="coachSpeed"><option value="5600">${escapeHTML(t.slowSpeed)}</option><option value="3600">${escapeHTML(t.normalSpeed)}</option></select><div class="demo-buttons"><button id="coachPlay" type="button">▶ ${escapeHTML(t.playDemo)}</button><button id="coachPause" type="button" disabled>Ⅱ ${escapeHTML(t.pauseDemo)}</button></div></div></div>`;
     const flow = `<div class="animation-flow" aria-hidden="true"><span><i>1</i>${escapeHTML(t.locateControl)}</span><span><i>2</i>${escapeHTML(t.performClick)}</span><span><i>3</i>${escapeHTML(t.verifyChange)}</span></div>`;
-    const reproduce = `<div class="reproduce-bar"><span aria-hidden="true">🖥</span><p><strong>${escapeHTML(t.reproduceNow)}</strong><small>${escapeHTML(format(t.reproduceHelp, { course: course.name }))}</small></p></div>`;
+    const reproduce = `<div class="reproduce-bar"><span aria-hidden="true">🖥</span><p><strong>${escapeHTML(t.reproduceNow)}</strong><small>${escapeHTML(format(t.reproduceHelp, { course: course.name }))}</small></p><button id="coachDone" type="button">✓ ${escapeHTML(t.markStepDone)}</button></div>`;
     const coach = `${flow}<div class="guide-progress" aria-label="${escapeHTML(t.stepByStep)}">${dots}</div><div class="instruction-panel" aria-live="polite"><div><span>1</span><p><b>${escapeHTML(t.whereToClick)}</b><strong id="guideWhere">${escapeHTML(first.where)}</strong></p></div><div><span>2</span><p><b>${escapeHTML(t.whatToDo)}</b><strong id="guideDo">${escapeHTML(first.action)}</strong></p></div><div><span>3</span><p><b>${escapeHTML(t.expectedResult)}</b><strong id="guideResult">${escapeHTML(first.result)}</strong></p></div></div>${reproduce}<div class="click-coach"><span class="coach-count" id="coachCount">1/${item.steps.length}</span><p><strong id="coachStatus">${escapeHTML(t.demoPaused)}</strong><span id="coachText">${escapeHTML(first.action)}</span></p><button id="coachNext" type="button">${escapeHTML(t.showNextPoint)}</button></div>`;
     const cursor = `<div class="demo-cursor" id="demoCursor" aria-hidden="true"><i>↖</i><b>${escapeHTML(t.clickHere)}</b></div><div class="result-stamp" aria-hidden="true">✓ ${escapeHTML(t.verifyChange)}</div>`;
     const keyboard = keyboardHTML(item);
@@ -438,18 +439,30 @@
     const play = $('#coachPlay');
     const pause = $('#coachPause');
     const next = $('#coachNext');
+    const speed = $('#coachSpeed');
+    const doneButton = $('#coachDone');
     const ribbonTabs = [...document.querySelectorAll('[data-ribbon]')];
     const block = $('#guidedBlock');
     let step = 0;
     let playing = false;
+    let finished = false;
+    const savedGuideSteps = Array.isArray(guideState[lessonId(current)]) ? guideState[lessonId(current)] : [];
+    const doneSteps = new Set(savedGuideSteps.filter(index => Number.isInteger(index) && index >= 0 && index < targets.length));
+    const setDemoSpeed = () => {
+      const duration = Number(speed.value);
+      block.style.setProperty('--demo-duration', `${duration}ms`);
+      block.style.setProperty('--demo-phase-two', `${Math.round(duration * .3)}ms`);
+      block.style.setProperty('--demo-phase-three', `${Math.round(duration * .6)}ms`);
+    };
+    setDemoSpeed();
 
-    const stop = () => {
+    const stop = (announce = true) => {
       clearInterval(coachTimer);
       coachTimer = undefined;
       playing = false;
       play.disabled = false;
       pause.disabled = true;
-      status.textContent = t.demoPaused;
+      if (announce) status.textContent = t.demoPaused;
       block.classList.remove('is-playing');
     };
 
@@ -465,15 +478,22 @@
       const details = stepDetails(item, step);
       targets.forEach((target, index) => {
         target.classList.toggle('guide-active', index === step);
+        target.classList.toggle('guide-complete', doneSteps.has(index));
         target.setAttribute('aria-current', index === step ? 'step' : 'false');
       });
-      dots.forEach((dot, index) => dot.classList.toggle('active', index === step));
+      dots.forEach((dot, index) => {
+        dot.classList.toggle('active', index === step);
+        dot.classList.toggle('guide-complete', doneSteps.has(index));
+      });
       count.textContent = `${step + 1}/${targets.length}`;
       text.textContent = details.action;
       $('#guideWhere').textContent = details.where;
       $('#guideDo').textContent = details.action;
       $('#guideResult').textContent = details.result;
       next.textContent = step === targets.length - 1 ? t.restartGuide : t.showNextPoint;
+      doneButton.classList.toggle('done', doneSteps.has(step));
+      doneButton.textContent = doneSteps.has(step) ? `✓ ${t.stepDone}` : `✓ ${t.markStepDone}`;
+      doneButton.setAttribute('aria-pressed', String(doneSteps.has(step)));
       preview.dataset.demoZone = step === 0 ? 'ribbon' : step === targets.length - 1 ? 'result' : 'workspace';
       ribbonTabs.forEach(tab => tab.classList.toggle('tab-active', details.where.toLocaleLowerCase(t.locale).includes(tab.textContent.toLocaleLowerCase(t.locale))));
       moveCursor(targets[step]);
@@ -481,12 +501,15 @@
     const advance = (manual = true) => {
       if (manual) stop();
       step = step === targets.length - 1 ? 0 : step + 1;
+      finished = false;
+      play.innerHTML = `▶ ${escapeHTML(t.playDemo)}`;
       show();
     };
 
     const start = () => {
       clearInterval(coachTimer);
-      step = 0;
+      if (finished) step = 0;
+      finished = false;
       playing = true;
       block.classList.add('is-playing');
       play.disabled = true;
@@ -495,19 +518,38 @@
       show();
       coachTimer = setInterval(() => {
         if (step === targets.length - 1) {
-          stop();
+          stop(false);
+          finished = true;
+          status.textContent = t.demoFinished;
           play.innerHTML = `↻ ${escapeHTML(t.replayDemo)}`;
           return;
         }
         advance(false);
-      }, 2800);
+      }, Number(speed.value));
     };
 
-    targets.forEach((target, index) => target.addEventListener('click', () => { stop(); step = index; show(); }));
-    dots.forEach((dot, index) => dot.addEventListener('click', () => { stop(); step = index; show(); }));
+    const toggleDone = () => {
+      if (doneSteps.has(step)) doneSteps.delete(step);
+      else doneSteps.add(step);
+      guideState[lessonId(current)] = [...doneSteps].sort((a, b) => a - b);
+      save();
+      show();
+      if (doneSteps.size === targets.length) showToast(t.guideComplete);
+    };
+
+    targets.forEach((target, index) => target.addEventListener('click', () => { stop(); step = index; finished = false; show(); }));
+    dots.forEach((dot, index) => dot.addEventListener('click', () => { stop(); step = index; finished = false; show(); }));
     next.addEventListener('click', () => advance(true));
     play.addEventListener('click', start);
     pause.addEventListener('click', stop);
+    doneButton.addEventListener('click', toggleDone);
+    speed.addEventListener('change', () => {
+      const resume = playing;
+      stop(false);
+      setDemoSpeed();
+      status.textContent = resume ? t.speedChanged : t.demoPaused;
+      if (resume) start();
+    });
     window.addEventListener('resize', () => moveCursor(targets[step]), { passive: true });
     show();
   }

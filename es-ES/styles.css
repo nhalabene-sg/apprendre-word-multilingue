@@ -177,6 +177,10 @@ code { padding: 2px 6px; background: rgba(var(--accent-rgb), .09); color: var(--
 .demo-buttons button { padding: 8px 10px; border: 1px solid rgba(var(--accent-rgb), .32); border-radius: 9px; background: var(--accent); color: #fff; cursor: pointer; font-size: .73rem; font-weight: 850; }
 .demo-buttons button + button { background: var(--paper); color: var(--accent-dark); }
 .demo-buttons button:disabled { cursor: not-allowed; opacity: .45; }
+.demo-control-group { flex: 0 0 auto; display: grid; grid-template-columns: auto auto; align-items: center; gap: 5px 8px; }
+.demo-control-group > label { color: var(--muted); font-size: .66rem; font-weight: 850; }
+.demo-control-group > select { min-height: 32px; padding: 5px 27px 5px 8px; border: 1px solid var(--line); border-radius: 8px; background: var(--paper); color: var(--ink); font: inherit; font-size: .7rem; font-weight: 800; }
+.demo-control-group .demo-buttons { grid-column: 1 / -1; }
 .keyboard-coach { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-top: 10px; padding: 12px 14px; border: 1px solid rgba(var(--accent-rgb), .25); border-radius: 13px; background: linear-gradient(135deg, var(--accent-soft), var(--paper)); }
 .keyboard-heading { min-width: 0; display: flex; align-items: center; gap: 10px; }
 .keyboard-heading > span { width: 36px; height: 36px; flex: 0 0 auto; display: grid; place-items: center; border-radius: 10px; background: var(--paper); font-size: 1.05rem; }
@@ -207,10 +211,10 @@ code { padding: 2px 6px; background: rgba(var(--accent-rgb), .09); color: var(--
 @keyframes cursorTap { 45%, 60% { transform: translate(-3px, -3px) scale(.88); } }
 .result-stamp { position: absolute; z-index: 8; right: 18px; bottom: 18px; padding: 8px 11px; border-radius: 9px; background: #0b6836; color: #fff; font-size: .72rem; font-weight: 900; opacity: 0; transform: translateY(8px) scale(.92); box-shadow: 0 10px 28px rgba(11,104,54,.28); }
 .guided-block:not(.is-playing) .demo-cursor i { animation-play-state: paused; }
-.guided-block.is-playing .keyboard-combo kbd { animation: keyPress 2.8s ease-in-out infinite; animation-delay: calc(var(--key-order) * .12s); }
-.guided-block.is-playing .result-stamp { animation: resultStamp 2.8s ease-in-out infinite; }
+.guided-block.is-playing .keyboard-combo kbd { animation: keyPress var(--demo-duration, 5.6s) ease-in-out infinite; animation-delay: calc(var(--key-order) * .12s); }
+.guided-block.is-playing .result-stamp { animation: resultStamp var(--demo-duration, 5.6s) ease-in-out infinite; }
 .guided-block.is-playing .cell.selected,
-.guided-block.is-playing .word-page { animation: workspaceResult 2.8s ease-in-out infinite; }
+.guided-block.is-playing .word-page { animation: workspaceResult var(--demo-duration, 5.6s) ease-in-out infinite; }
 @keyframes keyPress { 18%, 35% { transform: translateY(2px); border-bottom-width: 1px; background: var(--accent-soft); } }
 @keyframes resultStamp { 0%, 60% { opacity: 0; transform: translateY(8px) scale(.92); } 72%, 92% { opacity: 1; transform: translateY(0) scale(1); } 100% { opacity: 0; } }
 @keyframes workspaceResult { 0%, 64%, 100% { filter: none; } 76%, 92% { filter: saturate(1.2) drop-shadow(0 0 9px rgba(var(--accent-rgb), .22)); } }
@@ -222,12 +226,14 @@ code { padding: 2px 6px; background: rgba(var(--accent-rgb), .09); color: var(--
 .guide-progress { display: flex; justify-content: center; gap: 7px; margin: 13px 0 9px; }
 .guide-dot { width: 10px; height: 10px; padding: 0; border: 0; border-radius: 999px; background: var(--line); cursor: pointer; transition: width .2s ease, background .2s ease; }
 .guide-dot.active { width: 32px; background: var(--accent); }
+.guide-dot.guide-complete:not(.active) { background: #0b6836; }
+.guide-target.guide-complete > span { background: #0b6836; color: #fff; }
 .animation-flow { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; margin-top: 12px; }
 .animation-flow span { display: flex; align-items: center; justify-content: center; gap: 7px; padding: 8px; border: 1px solid var(--line); border-radius: 10px; background: var(--paper); color: var(--muted); font-size: .71rem; font-weight: 850; }
 .animation-flow i { width: 21px; height: 21px; display: grid; place-items: center; border-radius: 7px; background: var(--accent-soft); color: var(--accent-dark); font-size: .65rem; font-style: normal; }
-.guided-block.is-playing .animation-flow span { animation: flowStep 2.8s ease-in-out infinite; }
-.guided-block.is-playing .animation-flow span:nth-child(2) { animation-delay: .85s; }
-.guided-block.is-playing .animation-flow span:nth-child(3) { animation-delay: 1.7s; }
+.guided-block.is-playing .animation-flow span { animation: flowStep var(--demo-duration, 5.6s) ease-in-out infinite; }
+.guided-block.is-playing .animation-flow span:nth-child(2) { animation-delay: var(--demo-phase-two, 1.7s); }
+.guided-block.is-playing .animation-flow span:nth-child(3) { animation-delay: var(--demo-phase-three, 3.4s); }
 @keyframes flowStep { 0%, 22% { border-color: var(--accent); background: var(--accent-soft); color: var(--accent-dark); transform: translateY(-2px); } 32%, 100% { border-color: var(--line); background: var(--paper); color: var(--muted); transform: none; } }
 .instruction-panel { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 9px; }
 .instruction-panel > div { min-width: 0; display: grid; grid-template-columns: 30px 1fr; gap: 9px; padding: 12px; border: 1px solid var(--line); border-radius: 12px; background: var(--paper); }
@@ -238,10 +244,12 @@ code { padding: 2px 6px; background: rgba(var(--accent-rgb), .09); color: var(--
 .instruction-panel strong { color: var(--ink); font-size: .78rem; line-height: 1.4; }
 .reproduce-bar { display: flex; align-items: center; gap: 10px; margin-top: 9px; padding: 11px 13px; border: 1px dashed rgba(var(--accent-rgb), .45); border-radius: 11px; background: color-mix(in srgb, var(--accent-soft) 70%, var(--paper)); }
 .reproduce-bar > span { width: 31px; height: 31px; display: grid; place-items: center; border-radius: 9px; background: var(--paper); }
-.reproduce-bar p { margin: 0; }
+.reproduce-bar p { flex: 1; margin: 0; }
 .reproduce-bar strong, .reproduce-bar small { display: block; }
 .reproduce-bar strong { color: var(--accent-dark); font-size: .77rem; }
 .reproduce-bar small { margin-top: 2px; color: var(--muted); font-size: .69rem; line-height: 1.4; }
+.reproduce-bar button { flex: 0 0 auto; padding: 8px 10px; border: 1px solid rgba(var(--accent-rgb), .35); border-radius: 9px; background: var(--paper); color: var(--accent-dark); cursor: pointer; font-size: .7rem; font-weight: 850; }
+.reproduce-bar button.done { border-color: #0b6836; background: #0b6836; color: #fff; }
 .click-coach { display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 12px; margin-top: 10px; padding: 13px 14px; border: 1px solid rgba(var(--accent-rgb), .24); border-radius: 12px; background: var(--accent-soft); }
 .coach-count { width: 42px; height: 30px; display: grid; place-items: center; border-radius: 8px; background: var(--accent); color: #fff; font-size: .72rem; font-weight: 900; }
 .click-coach p { margin: 0; color: var(--accent-dark); font-size: .82rem; }
@@ -371,6 +379,9 @@ html[data-color-scheme="dark"] .office-preview { color: #17211b; }
 html[data-color-scheme="dark"] .demo-toolbar,
 html[data-color-scheme="dark"] .instruction-panel > div { border-color: var(--line); background: var(--paper); }
 html[data-color-scheme="dark"] .demo-buttons button + button { background: #172119; color: #dff7e7; }
+html[data-color-scheme="dark"] .demo-control-group > select,
+html[data-color-scheme="dark"] .reproduce-bar button { background: #172119; color: #dff7e7; }
+html[data-color-scheme="dark"] .reproduce-bar button.done { background: #35a862; color: #07150c; }
 html[data-color-scheme="dark"] .keyboard-heading > span,
 html[data-color-scheme="dark"] .keyboard-combo,
 html[data-color-scheme="dark"] .reproduce-bar > span { background: #172119; }
@@ -420,12 +431,16 @@ body.focus-mode .main { margin-left: 0; }
   .practice-heading { display: grid; }
   .guide-heading { align-items: flex-start; }
   .demo-toolbar { align-items: stretch; flex-direction: column; }
+  .demo-control-group { grid-template-columns: 1fr auto; }
   .keyboard-coach { align-items: stretch; flex-direction: column; }
   .keyboard-combos { justify-content: flex-start; }
   .demo-buttons button { flex: 1; }
   .step-guidance, .instruction-panel, .animation-flow { grid-template-columns: 1fr; }
   .click-coach { grid-template-columns: auto 1fr; }
   .click-coach button { grid-column: 1 / -1; }
+  .reproduce-bar { align-items: flex-start; flex-wrap: wrap; }
+  .reproduce-bar p { min-width: calc(100% - 48px); }
+  .reproduce-bar button { width: 100%; }
 }
 
 @media (prefers-reduced-motion: reduce) {
