@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en-GB" data-theme="word">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A complete interactive Microsoft Word course, from first steps to professional projects, in English.">
+  <meta name="theme-color" content="#185abd">
+  <title>Learn Word — Complete interactive course</title>
+  <script>try{document.documentElement.dataset.colorScheme=localStorage.getItem('office-academy-color-scheme')||(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light')}catch{document.documentElement.dataset.colorScheme='light'}</script>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23185abd'/%3E%3Cpath fill='white' d='M13 14h28v8h10v28H13V14zm9 10 4 17h6l3-11 3 11h6l4-17h-6l-2 11-3-11h-5l-3 11-2-11h-5z'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar" aria-label="Course content">
+      <div class="brand">
+        <div class="brand-mark" aria-hidden="true">W</div>
+        <div><strong>Learn Word</strong><span>English</span></div>
+      </div>
+      <div class="progress-card">
+        <div class="progress-copy"><span>Your progress</span><strong id="progressText">0%</strong></div>
+        <div class="progress-track"><span id="progressBar"></span></div>
+        <small id="progressCount">0 of 45 lessons</small>
+      </div>
+      <label class="search-box">
+        <span aria-hidden="true">⌕</span>
+        <input id="lessonSearch" type="search" placeholder="Search for a lesson" autocomplete="off">
+      </label>
+      <div class="level-filter" id="levelFilter" aria-label="Filter lessons by level"></div>
+      <nav id="courseNav" class="course-nav"></nav>
+      <div class="sidebar-footer">
+        <button id="resetProgress" class="ghost-button" type="button">Reset progress</button>
+        <a href="https://apprendre-excel-multilingue.vercel.app">Open the Excel course</a>
+      </div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <button id="menuButton" class="icon-button menu-button" type="button" aria-label="Open menu" aria-expanded="false">☰</button>
+        <div class="crumb" id="crumb">Module 1</div>
+        <div class="top-actions">
+          <span class="offline-pill">Available offline</span>
+          <button id="themeButton" class="icon-button" type="button" aria-label="Turn on dark mode" title="Turn on dark mode">☾</button>
+          <button id="focusButton" class="icon-button" type="button" aria-label="Focus mode" title="Focus mode">◐</button>
+        </div>
+      </header>
+
+      <article id="lesson" class="lesson" tabindex="-1"></article>
+
+      <footer class="lesson-footer">
+        <button id="prevButton" class="nav-button secondary" type="button">Previous</button>
+        <div class="lesson-position" id="lessonPosition">1 / 45</div>
+        <button id="nextButton" class="nav-button primary" type="button">Next</button>
+      </footer>
+    </main>
+  </div>
+
+  <div class="scrim" id="scrim"></div>
+  <dialog id="imageDialog" class="image-dialog">
+    <button id="closeImage" class="dialog-close" type="button" aria-label="Close">×</button>
+    <img id="dialogImage" alt="">
+    <p id="dialogCaption"></p>
+  </dialog>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <script src="ui.js"></script>
+  <script src="course-data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

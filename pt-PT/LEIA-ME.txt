@@ -1,0 +1,13 @@
+APRENDER WORD — CURSO INTERATIVO
+
+1. Abra a pasta "Word".
+2. Faça duplo clique em "index.html".
+3. O curso abre no navegador e funciona sem instalar nada.
+4. Escolha um nível no menu ou use "Seguinte" para avançar.
+5. Em cada lição, siga a missão, clique nos pontos do guia visual e conclua o programa de exercícios.
+6. A progressão e as caixas dos exercícios ficam guardadas neste navegador.
+
+Para abrir o curso Excel, use a ligação no fundo do menu lateral ou abra a pasta "Excel".
+
+Idioma: Português de Portugal.
+Conteúdo: 15 módulos, 45 lições e 7 níveis — Iniciação, Principiante, Básico, Intermédio, Avançado, Profissional e Projetos. Cada lição inclui um exercício guiado, um exercício autónomo, um desafio e um questionário. Cada módulo termina com um projeto prático, num total de 15 projetos.
