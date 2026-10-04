@@ -484,6 +484,166 @@ window.COURSE = {
           quiz: { question: 'O que melhora mais a leitura de um boletim?', options: ['Hierarquia clara e espaço em branco', 'Muitos tipos de letra', 'Texto muito pequeno'], answer: 0, explain: 'Hierarquia e espaço ajudam o leitor a perceber por onde começar e como percorrer a página.' }
         }
       ]
+    },
+    {
+      number: 'Módulo 16', title: 'Colaboração e versões na nuvem',
+      lessons: [
+        {
+          id: 'word-46', title: 'Partilhar e escrever em coautoria', level: 'Profissional', duration: '24 min',
+          intro: 'Trabalhe no mesmo documento com outras pessoas e controle quem pode editar ou apenas consultar.',
+          objectives: ['Partilhar a partir do OneDrive ou SharePoint', 'Reconhecer cursores e alterações de coautores'],
+          steps: ['Guarde o documento em <strong>OneDrive</strong> ou <strong>SharePoint</strong> e confirme que a Gravação Automática está disponível.', 'Clique em <strong>Partilhar</strong>, escolha pessoas específicas e defina a permissão Ver ou Editar.', 'Peça uma pequena alteração a outro utilizador, acompanhe a presença e confirme que o documento conserva uma única versão partilhada.'],
+          tip: 'Evite anexos sucessivos por email quando todos devem trabalhar no mesmo documento.',
+          practice: { intro: 'Partilhe uma ata de treino com um revisor.', tasks: ['Documento guardado na nuvem', 'Permissão correta definida', 'Alteração de coautoria confirmada'] },
+          quiz: { question: 'Qual é a principal vantagem da coautoria?', options: ['Várias pessoas trabalham na mesma versão', 'O documento deixa de precisar de título', 'As páginas imprimem-se sozinhas'], answer: 0, explain: 'A coautoria reduz cópias divergentes e reúne as alterações num documento partilhado.' }
+        },
+        {
+          id: 'word-47', title: 'Comentários, @menções e tarefas de revisão', level: 'Profissional', duration: '22 min',
+          intro: 'Transforme observações vagas num processo de revisão claro, com contexto e responsáveis.',
+          objectives: ['Criar conversas ligadas ao texto', 'Resolver comentários depois da validação'],
+          steps: ['Selecione a frase relevante e escolha <strong>Rever → Novo Comentário</strong>.', 'Use uma @menção para chamar a pessoa certa e escreva um pedido concreto, com decisão ou prazo quando necessário.', 'Responda, aplique a correção e marque o comentário como resolvido; mantenha abertos apenas os pontos pendentes.'],
+          tip: 'Um comentário deve dizer o que precisa de decisão, não apenas “ver isto”.',
+          practice: { intro: 'Faça uma revisão com três comentários de tipos diferentes.', tasks: ['Comentários ligados ao texto', 'Responsável e ação claros', 'Comentários concluídos resolvidos'] },
+          quiz: { question: 'Quando deve resolver um comentário?', options: ['Depois de a questão estar tratada ou decidida', 'Assim que é criado', 'Antes de o ler'], answer: 0, explain: 'Resolver indica que o ponto deixou de precisar de ação, preservando a conversa.' }
+        },
+        {
+          id: 'word-48', title: 'Comparar, combinar e recuperar versões', level: 'Profissional', duration: '28 min',
+          intro: 'Descubra diferenças entre ficheiros e reúna revisões sem copiar alterações manualmente.',
+          objectives: ['Comparar duas versões', 'Combinar revisões e consultar o histórico'],
+          steps: ['Abra <strong>Rever → Comparar → Comparar</strong> e escolha o documento original e o revisto.', 'Analise alterações num novo documento; quando existirem revisões de várias pessoas, use <strong>Combinar</strong> numa cópia.', 'Num ficheiro da nuvem, abra <strong>Ficheiro → Informações → Histórico de Versões</strong> e compare antes de restaurar.'],
+          tip: 'Mantenha o original intacto até terminar a comparação e a aprovação.',
+          practice: { intro: 'Compare duas versões de uma política curta.', tasks: ['Diferenças identificadas', 'Alterações aceites ou rejeitadas', 'Histórico de versões consultado'] },
+          quiz: { question: 'Onde aparecem as diferenças da comparação?', options: ['Num novo documento de comparação', 'Apenas no título', 'Na área de transferência'], answer: 0, explain: 'O Word cria um resultado separado para proteger os ficheiros escolhidos.' }
+        }
+      ]
+    },
+    {
+      number: 'Módulo 17', title: 'Escrita inclusiva e multilingue',
+      lessons: [
+        {
+          id: 'word-49', title: 'Acessibilidade avançada do documento', level: 'Profissional', duration: '28 min',
+          intro: 'Crie documentos que possam ser lidos e navegados com tecnologias de apoio.',
+          objectives: ['Corrigir problemas no Verificador de Acessibilidade', 'Definir estrutura, texto alternativo e ordem de leitura'],
+          steps: ['Abra <strong>Rever → Verificar Acessibilidade</strong> e mantenha o painel visível durante a revisão.', 'Corrija títulos, tabelas com cabeçalhos, hiperligações descritivas, contraste e texto alternativo das imagens.', 'Use o Painel de Navegação e, quando disponível, a ordem de leitura para confirmar um percurso lógico sem depender apenas da aparência.'],
+          tip: 'Não comece o texto alternativo com “imagem de”; descreva a informação ou função relevante.',
+          practice: { intro: 'Corrija um documento com pelo menos seis problemas preparados.', tasks: ['Estrutura por estilos corrigida', 'Tabelas e imagens acessíveis', 'Verificador sem erros críticos'] },
+          quiz: { question: 'Porque usar estilos de Título?', options: ['Criam estrutura navegável', 'Apenas mudam a cor', 'Impedem a impressão'], answer: 0, explain: 'Os estilos comunicam níveis de estrutura ao Word, ao índice e às tecnologias de apoio.' }
+        },
+        {
+          id: 'word-50', title: 'Idiomas, tradução e leitura em voz alta', level: 'Profissional', duration: '24 min',
+          intro: 'Defina corretamente o idioma do texto e utilize ferramentas de leitura e tradução sem perder controlo editorial.',
+          objectives: ['Aplicar idiomas de revisão por seleção', 'Rever traduções e ouvir o documento'],
+          steps: ['Selecione o texto e use <strong>Rever → Idioma → Definir Idioma de Revisão</strong>; desative a deteção automática quando causa erros.', 'Use <strong>Rever → Traduzir</strong> numa cópia e reveja terminologia, nomes próprios, números e formatação.', 'Ative <strong>Rever → Ler em Voz Alta</strong> para detetar frases longas, palavras repetidas e pontuação confusa.'],
+          tip: 'A tradução automática é um rascunho: uma pessoa competente deve validar significado e tom.',
+          practice: { intro: 'Prepare uma página bilingue com revisão adequada.', tasks: ['Idioma correto em cada bloco', 'Tradução revista manualmente', 'Leitura em voz alta usada para corrigir fluidez'] },
+          quiz: { question: 'O idioma de revisão afeta o quê?', options: ['Ortografia, gramática e algumas ferramentas linguísticas', 'As margens', 'O tamanho do ficheiro'], answer: 0, explain: 'O Word usa o idioma atribuído para escolher regras e dicionários adequados.' }
+        },
+        {
+          id: 'word-51', title: 'Ditado e transcrição com revisão', level: 'Profissional', duration: '26 min',
+          intro: 'Produza um primeiro rascunho por voz e transforme gravações em texto, mantendo revisão humana e privacidade.',
+          objectives: ['Configurar e usar o Ditado', 'Rever uma transcrição antes de a inserir'],
+          steps: ['Quando disponível no Microsoft 365, abra <strong>Base → Ditar</strong>, escolha o idioma falado e teste o microfone.', 'Dite um parágrafo com pontuação, pare a gravação e corrija nomes, números e palavras assinaladas.', 'Para uma gravação autorizada, use <strong>Ditar → Transcrever</strong>, reveja oradores e excertos antes de inserir o texto no documento.'],
+          tip: 'Peça consentimento antes de gravar e não envie áudio confidencial para um serviço sem autorização.',
+          practice: { intro: 'Crie e reveja uma nota de reunião de um minuto.', tasks: ['Idioma e microfone configurados', 'Texto ditado corrigido', 'Privacidade e atribuição de oradores verificadas'] },
+          quiz: { question: 'O texto ditado está pronto sem revisão?', options: ['Não, nomes, números e pontuação devem ser verificados', 'Sim, sempre', 'Apenas se estiver em negrito'], answer: 0, explain: 'O reconhecimento pode interpretar incorretamente palavras e contexto.' }
+        }
+      ]
+    },
+    {
+      number: 'Módulo 18', title: 'Documentos técnicos e académicos',
+      lessons: [
+        {
+          id: 'word-52', title: 'Equações, símbolos e numeração técnica', level: 'Profissional', duration: '26 min',
+          intro: 'Escreva expressões técnicas editáveis e mantenha referências coerentes.',
+          objectives: ['Inserir equações profissionais', 'Numerar e referenciar expressões importantes'],
+          steps: ['Use <strong>Inserir → Equação</strong> e construa uma expressão com fração, expoente e símbolo, em vez de a colar como imagem.', 'Defina símbolos usados no texto e aplique um estilo consistente às equações.', 'Adicione uma legenda ou campo de numeração e crie uma referência cruzada que se atualize quando a ordem mudar.'],
+          tip: 'Equações editáveis são mais nítidas, pesquisáveis e acessíveis do que capturas de ecrã.',
+          practice: { intro: 'Crie uma página técnica com três equações.', tasks: ['Equações editáveis inseridas', 'Símbolos explicados', 'Numeração e referência cruzada testadas'] },
+          quiz: { question: 'Porque evitar uma imagem da equação?', options: ['É menos editável e acessível', 'Ocupa sempre zero espaço', 'Muda o idioma do Word'], answer: 0, explain: 'O editor de equações preserva estrutura, qualidade e possibilidades de edição.' }
+        },
+        {
+          id: 'word-53', title: 'Fontes, citações e bibliografia controladas', level: 'Profissional', duration: '30 min',
+          intro: 'Gira fontes de forma consistente e atualize citações sem reescrever manualmente a bibliografia.',
+          objectives: ['Criar e reutilizar fontes no Gestor de Fontes', 'Alterar estilo e atualizar a bibliografia'],
+          steps: ['Escolha <strong>Referências → Gerir Fontes</strong> e crie registos completos para livro, artigo e página Web.', 'Insira citações no texto, incluindo número de página quando necessário, e escolha o estilo exigido pelo trabalho.', 'Insira a bibliografia, atualize-a depois de adicionar uma fonte e verifique cada referência com as regras da instituição.'],
+          tip: 'A ferramenta formata os dados fornecidos, mas não confirma se a fonte ou os campos estão corretos.',
+          practice: { intro: 'Crie um texto curto com três tipos de fonte.', tasks: ['Fontes completas registadas', 'Citações inseridas no local certo', 'Bibliografia atualizada e revista'] },
+          quiz: { question: 'O Word valida automaticamente a qualidade da fonte?', options: ['Não, o utilizador deve verificar conteúdo e dados', 'Sim, sempre', 'Apenas em PDF'], answer: 0, explain: 'O Word ajuda na gestão e formatação, não na avaliação académica da fonte.' }
+        },
+        {
+          id: 'word-54', title: 'Marcadores, hiperligações e índice remissivo', level: 'Profissional', duration: '28 min',
+          intro: 'Construa navegação interna e um índice alfabético útil para documentos extensos.',
+          objectives: ['Criar destinos internos com marcadores', 'Marcar entradas e gerar um índice remissivo'],
+          steps: ['Selecione um destino e use <strong>Inserir → Marcador</strong> com um nome curto sem espaços.', 'Crie uma hiperligação para o marcador e teste o percurso e o regresso.', 'Selecione termos importantes, use <strong>Referências → Marcar Entrada</strong> e gere o Índice no final; atualize-o depois de editar.'],
+          tip: 'Marque conceitos que o leitor procurará, não todas as ocorrências de palavras comuns.',
+          practice: { intro: 'Adicione navegação e um índice a um manual de seis páginas.', tasks: ['Marcadores e ligações internas testados', 'Entradas principais e secundárias marcadas', 'Índice gerado e atualizado'] },
+          quiz: { question: 'Para que serve um marcador?', options: ['Criar um destino interno identificável', 'Alterar a orientação', 'Ativar o microfone'], answer: 0, explain: 'O marcador identifica uma posição à qual uma hiperligação ou referência pode apontar.' }
+        }
+      ]
+    },
+    {
+      number: 'Módulo 19', title: 'Automatização e campos avançados',
+      lessons: [
+        {
+          id: 'word-55', title: 'Partes Rápidas, AutoTexto e propriedades', level: 'Profissional', duration: '25 min',
+          intro: 'Reutilize blocos aprovados e atualize automaticamente informações como título, autor ou referência.',
+          objectives: ['Guardar um bloco na Galeria de Partes Rápidas', 'Inserir propriedades do documento como campos'],
+          steps: ['Selecione um bloco aprovado e use <strong>Inserir → Partes Rápidas → Guardar Seleção na Galeria</strong>.', 'Insira o bloco noutro ponto e edite a origem com um processo controlado quando o texto padrão mudar.', 'Preencha propriedades em <strong>Ficheiro → Informações</strong> e insira-as com <strong>Partes Rápidas → Propriedade do Documento</strong>.'],
+          tip: 'Use AutoTexto apenas para conteúdo aprovado; indique responsável e data de revisão.',
+          practice: { intro: 'Crie três blocos reutilizáveis para propostas.', tasks: ['Blocos guardados e nomeados', 'Propriedades inseridas como campos', 'Atualização e responsabilidade documentadas'] },
+          quiz: { question: 'Qual é a vantagem de uma propriedade inserida como campo?', options: ['Pode atualizar-se em vários locais', 'Transforma texto em imagem', 'Remove as margens'], answer: 0, explain: 'O campo apresenta um valor centralizado, evitando alterar cada ocorrência manualmente.' }
+        },
+        {
+          id: 'word-56', title: 'Campos condicionais e cálculos em formulários', level: 'Profissional', duration: '30 min',
+          intro: 'Mostre conteúdo variável e resultados automáticos sem escrever várias versões do documento.',
+          objectives: ['Inserir e atualizar campos', 'Testar uma condição ou cálculo simples'],
+          steps: ['Ative a visualização dos códigos de campo numa cópia e insira campos através de <strong>Inserir → Partes Rápidas → Campo</strong>.', 'Crie uma condição simples com IF ou um cálculo numa tabela e use <strong>F9</strong> para atualizar o resultado.', 'Teste valores que produzam cada resultado, volte a ocultar os códigos e confirme a impressão e o PDF.'],
+          tip: 'Campos não se atualizam todos da mesma forma; antes de entregar, selecione o documento e atualize os campos.',
+          practice: { intro: 'Crie uma proposta que altere uma mensagem conforme um valor.', tasks: ['Campo condicional criado', 'Dois resultados testados', 'Todos os campos atualizados antes da exportação'] },
+          quiz: { question: 'Que tecla atualiza um campo selecionado?', options: ['F9', 'Esc', 'Caps Lock'], answer: 0, explain: 'F9 atualiza o campo selecionado no Word para Windows.' }
+        },
+        {
+          id: 'word-57', title: 'Gravar uma macro simples com segurança', level: 'Profissional', duration: '28 min',
+          intro: 'Automatize uma formatação repetitiva e compreenda os cuidados necessários com documentos que contêm macros.',
+          objectives: ['Gravar e executar uma macro curta', 'Guardar e partilhar o ficheiro com segurança'],
+          steps: ['Ative o separador <strong>Programador</strong> e faça um ensaio manual da sequência numa cópia sem dados sensíveis.', 'Escolha <strong>Gravar Macro</strong>, atribua um nome, execute uma formatação curta e pare a gravação.', 'Guarde como <strong>Documento com Permissão para Macros (.docm)</strong> e teste apenas numa localização fidedigna.'],
+          tip: 'Nunca ative macros recebidas de uma origem que não consegue verificar.',
+          practice: { intro: 'Grave uma macro que aplique o formato de uma nota de aviso.', tasks: ['Sequência ensaiada e gravada', 'Ficheiro .docm guardado', 'Macro testada numa cópia segura'] },
+          quiz: { question: 'Porque uma macro exige cuidado?', options: ['Pode executar código e ações no computador', 'Muda sempre o texto para inglês', 'Impede qualquer edição'], answer: 0, explain: 'Macros podem automatizar trabalho legítimo, mas também podem conter ações maliciosas.' }
+        }
+      ]
+    },
+    {
+      number: 'Módulo 20', title: 'Segurança, publicação e projeto final',
+      lessons: [
+        {
+          id: 'word-58', title: 'Inspecionar metadados e conteúdo oculto', level: 'Profissional', duration: '26 min',
+          intro: 'Evite publicar comentários, propriedades, versões ou texto oculto que não deveria acompanhar o documento.',
+          objectives: ['Usar o Inspetor de Documentos numa cópia', 'Rever metadados e conteúdo oculto'],
+          steps: ['Guarde uma cópia e abra <strong>Ficheiro → Informações → Verificar Existência de Problemas → Inspecionar Documento</strong>.', 'Reveja propriedades, comentários, revisões, cabeçalhos, conteúdo oculto e dados personalizados antes de remover.', 'Abra novamente a cópia, confirme o conteúdo visível e teste ligações, campos e acessibilidade.'],
+          tip: 'A remoção pelo Inspetor pode não ser reversível; preserve sempre o original interno.',
+          practice: { intro: 'Prepare uma versão pública de um documento revisto.', tasks: ['Original interno preservado', 'Resultados do Inspetor analisados', 'Cópia pública aberta e verificada'] },
+          quiz: { question: 'Porque inspecionar uma cópia?', options: ['Algumas remoções são difíceis de reverter', 'Para aumentar o número de páginas', 'Para criar uma tabela'], answer: 0, explain: 'A cópia permite limpar a versão pública sem perder informação de trabalho necessária.' }
+        },
+        {
+          id: 'word-59', title: 'Restringir edição, assinar e publicar em PDF', level: 'Profissional', duration: '30 min',
+          intro: 'Escolha a proteção e o formato de entrega adequados, sabendo o que cada opção realmente garante.',
+          objectives: ['Aplicar uma restrição de edição', 'Preparar uma assinatura ou PDF verificável'],
+          steps: ['Use <strong>Rever → Restringir Edição</strong> para permitir apenas leitura, comentários ou preenchimento de formulário, e teste a palavra-passe numa cópia.', 'Quando aplicável, use uma assinatura digital baseada num certificado válido; não confunda uma imagem de assinatura com prova criptográfica.', 'Exporte para PDF, escolha opções de acessibilidade, abra o resultado e teste texto, ligações, marcadores, campos e paginação.'],
+          tip: 'Uma palavra-passe esquecida pode bloquear o trabalho; siga a política da organização e preserve uma cópia controlada.',
+          practice: { intro: 'Entregue versões editável, protegida e PDF de um formulário.', tasks: ['Restrição adequada testada', 'Método de assinatura explicado', 'PDF acessível e paginação verificados'] },
+          quiz: { question: 'Uma imagem de assinatura prova criptograficamente a identidade?', options: ['Não', 'Sim, sempre', 'Apenas se for azul'], answer: 0, explain: 'Uma assinatura digital válida usa certificado e mecanismos de verificação; uma imagem é apenas conteúdo visual.' }
+        },
+        {
+          id: 'word-60', title: 'Projeto final: documento profissional completo', level: 'Projeto final', duration: '90 min',
+          intro: 'Planeie, escreva, reveja, torne acessível e publique um documento que outra pessoa consiga manter.',
+          objectives: ['Integrar estrutura, colaboração, referências e segurança', 'Demonstrar qualidade editorial e técnica'],
+          steps: ['Escolha um relatório, manual ou proposta real; defina público, objetivo, estrutura, responsáveis e critérios de aprovação.', 'Use estilos, secções, campos, referências e objetos acessíveis; faça revisão colaborativa com alterações e comentários controlados.', 'Atualize campos e índices, execute Editor, Acessibilidade e Inspetor, compare a versão aprovada e entregue DOCX, PDF e instruções de manutenção.'],
+          tip: 'O projeto termina quando conteúdo, estrutura, acessibilidade, revisão e formato de entrega foram testados por outra pessoa.',
+          practice: { intro: 'Entregue um documento de pelo menos oito páginas e a respetiva lista de controlo.', tasks: ['Estrutura e referências automáticas', 'Revisão e acessibilidade concluídas', 'Versões DOCX/PDF e manutenção documentadas'] },
+          quiz: { question: 'Qual é a melhor prova de conclusão?', options: ['Outra pessoa consegue utilizar, verificar e atualizar o documento', 'O ficheiro tem muitas páginas', 'O título está em maiúsculas'], answer: 0, explain: 'Um documento profissional precisa de ser correto, compreensível, acessível e sustentável.' }
+        }
+      ]
     }
   ]
 };

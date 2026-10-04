@@ -1533,7 +1533,7 @@ window.COURSE = {
         {
           "id": "word-37",
           "title": "Etiquetas y sobres",
-          "level": "Profesional",
+          "level": "Avanzado",
           "duration": "24 min",
           "intro": "Aprende «Etiquetas y sobres» paso a paso, aunque nunca hayas utilizado este programa. Crearás un resultado concreto antes de continuar.",
           "objectives": [
@@ -1572,7 +1572,7 @@ window.COURSE = {
         {
           "id": "word-38",
           "title": "Reglas en una combinación de correspondencia",
-          "level": "Profesional",
+          "level": "Avanzado",
           "duration": "26 min",
           "intro": "Aprende «Reglas en una combinación de correspondencia» paso a paso, aunque nunca hayas utilizado este programa. Crearás un resultado concreto antes de continuar.",
           "objectives": [
@@ -1611,7 +1611,7 @@ window.COURSE = {
         {
           "id": "word-39",
           "title": "Crear un directorio o catálogo",
-          "level": "Profesional",
+          "level": "Avanzado",
           "duration": "28 min",
           "intro": "Aprende «Crear un directorio o catálogo» paso a paso, aunque nunca hayas utilizado este programa. Crearás un resultado concreto antes de continuar.",
           "objectives": [
@@ -1656,7 +1656,7 @@ window.COURSE = {
         {
           "id": "word-40",
           "title": "Organizar con el panel de navegación",
-          "level": "Profesional",
+          "level": "Avanzado",
           "duration": "22 min",
           "intro": "Aprende «Organizar con el panel de navegación» paso a paso, aunque nunca hayas utilizado este programa. Crearás un resultado concreto antes de continuar.",
           "objectives": [
@@ -1695,7 +1695,7 @@ window.COURSE = {
         {
           "id": "word-41",
           "title": "Índice de ilustraciones y tablas",
-          "level": "Profesional",
+          "level": "Avanzado",
           "duration": "25 min",
           "intro": "Aprende «Índice de ilustraciones y tablas» paso a paso, aunque nunca hayas utilizado este programa. Crearás un resultado concreto antes de continuar.",
           "objectives": [
@@ -1734,7 +1734,7 @@ window.COURSE = {
         {
           "id": "word-42",
           "title": "Propiedades, versiones y estructura",
-          "level": "Profesional",
+          "level": "Avanzado",
           "duration": "24 min",
           "intro": "Aprende «Propiedades, versiones y estructura» paso a paso, aunque nunca hayas utilizado este programa. Crearás un resultado concreto antes de continuar.",
           "objectives": [
@@ -1779,7 +1779,7 @@ window.COURSE = {
         {
           "id": "word-43",
           "title": "Proyecto: crear un CV y una carta de presentación",
-          "level": "Proyectos",
+          "level": "Profesional",
           "duration": "50 min",
           "intro": "Aprende «Proyecto: crear un CV y una carta de presentación» paso a paso, aunque nunca hayas utilizado este programa. Crearás un resultado concreto antes de continuar.",
           "objectives": [
@@ -1818,7 +1818,7 @@ window.COURSE = {
         {
           "id": "word-44",
           "title": "Proyecto: crear un manual o informe profesional",
-          "level": "Proyectos",
+          "level": "Profesional",
           "duration": "60 min",
           "intro": "Aprende «Proyecto: crear un manual o informe profesional» paso a paso, aunque nunca hayas utilizado este programa. Crearás un resultado concreto antes de continuar.",
           "objectives": [
@@ -1857,7 +1857,7 @@ window.COURSE = {
         {
           "id": "word-45",
           "title": "Proyecto: crear un boletín informativo",
-          "level": "Proyectos",
+          "level": "Profesional",
           "duration": "55 min",
           "intro": "Aprende «Proyecto: crear un boletín informativo» paso a paso, aunque nunca hayas utilizado este programa. Crearás un resultado concreto antes de continuar.",
           "objectives": [
@@ -1884,6 +1884,621 @@ window.COURSE = {
           },
           "quiz": {
             "question": "¿Qué método ayuda más a dominar «Proyecto: crear un boletín informativo»?",
+            "options": [
+              "Hacer clic rápidamente sin comprobar",
+              "Seguir los pasos, practicar a solas y comprobar el resultado",
+              "Memorizar todos los botones sin practicar"
+            ],
+            "answer": 1,
+            "explain": "La práctica progresiva y la comprobación del resultado permiten aprender de forma duradera."
+          }
+        }
+      ]
+    },
+    {
+      "number": "Módulo 16",
+      "title": "Colaboración y versiones en la nube",
+      "lessons": [
+        {
+          "id": "word-46",
+          "title": "Compartir y escribir en coautoría",
+          "level": "Profesional",
+          "duration": "24 min",
+          "intro": "Aprende «Compartir y escribir en coautoría» paso a paso, aunque nunca hayas utilizado este programa. Crearás un resultado concreto antes de continuar.",
+          "objectives": [
+            "Comprender para qué sirve «Compartir y escribir en coautoría»",
+            "Repetir el método en un archivo propio",
+            "Comprobar y presentar un resultado limpio"
+          ],
+          "steps": [
+            "Abre Word y elige <strong>Archivo → Nuevo</strong>.",
+            "Ve exactamente a <strong>Archivo → Compartir → OneDrive o SharePoint</strong>.",
+            "Aplica «Compartir y escribir en coautoría» al contenido de práctica y observa inmediatamente el resultado.",
+            "Haz un <strong>ejercicio autónomo</strong> con otro ejemplo sin consultar los pasos.",
+            "Utiliza <strong>Archivo → Guardar</strong>, pon un nombre claro al archivo y comprueba el resultado."
+          ],
+          "shortcuts": [],
+          "tip": "Avanza despacio: en «<strong>Compartir y escribir en coautoría</strong>», comprueba el resultado después de cada clic.",
+          "practice": {
+            "intro": "Realiza ahora «Compartir y escribir en coautoría» en un archivo de prueba.",
+            "tasks": [
+              "Crear o abrir un archivo de práctica en Word",
+              "Aplicar la técnica «Compartir y escribir en coautoría» al contenido propuesto",
+              "Guardar y comprobar que el resultado sigue siendo correcto"
+            ]
+          },
+          "quiz": {
+            "question": "¿Qué método ayuda más a dominar «Compartir y escribir en coautoría»?",
+            "options": [
+              "Hacer clic rápidamente sin comprobar",
+              "Seguir los pasos, practicar a solas y comprobar el resultado",
+              "Memorizar todos los botones sin practicar"
+            ],
+            "answer": 1,
+            "explain": "La práctica progresiva y la comprobación del resultado permiten aprender de forma duradera."
+          }
+        },
+        {
+          "id": "word-47",
+          "title": "Comentarios, @menciones y tareas de revisión",
+          "level": "Profesional",
+          "duration": "22 min",
+          "intro": "Aprende «Comentarios, @menciones y tareas de revisión» paso a paso, aunque nunca hayas utilizado este programa. Crearás un resultado concreto antes de continuar.",
+          "objectives": [
+            "Comprender para qué sirve «Comentarios, @menciones y tareas de revisión»",
+            "Repetir el método en un archivo propio",
+            "Comprobar y presentar un resultado limpio"
+          ],
+          "steps": [
+            "Abre Word y elige <strong>Archivo → Nuevo</strong>.",
+            "Ve exactamente a <strong>Revisar → Nuevo comentario y @mención</strong>.",
+            "Aplica «Comentarios, @menciones y tareas de revisión» al contenido de práctica y observa inmediatamente el resultado.",
+            "Haz un <strong>ejercicio autónomo</strong> con otro ejemplo sin consultar los pasos.",
+            "Utiliza <strong>Archivo → Guardar</strong>, pon un nombre claro al archivo y comprueba el resultado."
+          ],
+          "shortcuts": [],
+          "tip": "Avanza despacio: en «<strong>Comentarios, @menciones y tareas de revisión</strong>», comprueba el resultado después de cada clic.",
+          "practice": {
+            "intro": "Realiza ahora «Comentarios, @menciones y tareas de revisión» en un archivo de prueba.",
+            "tasks": [
+              "Crear o abrir un archivo de práctica en Word",
+              "Aplicar la técnica «Comentarios, @menciones y tareas de revisión» al contenido propuesto",
+              "Guardar y comprobar que el resultado sigue siendo correcto"
+            ]
+          },
+          "quiz": {
+            "question": "¿Qué método ayuda más a dominar «Comentarios, @menciones y tareas de revisión»?",
+            "options": [
+              "Hacer clic rápidamente sin comprobar",
+              "Seguir los pasos, practicar a solas y comprobar el resultado",
+              "Memorizar todos los botones sin practicar"
+            ],
+            "answer": 1,
+            "explain": "La práctica progresiva y la comprobación del resultado permiten aprender de forma duradera."
+          }
+        },
+        {
+          "id": "word-48",
+          "title": "Comparar, combinar y recuperar versiones",
+          "level": "Profesional",
+          "duration": "28 min",
+          "intro": "Aprende «Comparar, combinar y recuperar versiones» paso a paso, aunque nunca hayas utilizado este programa. Crearás un resultado concreto antes de continuar.",
+          "objectives": [
+            "Comprender para qué sirve «Comparar, combinar y recuperar versiones»",
+            "Repetir el método en un archivo propio",
+            "Comprobar y presentar un resultado limpio"
+          ],
+          "steps": [
+            "Abre Word y elige <strong>Archivo → Nuevo</strong>.",
+            "Ve exactamente a <strong>Revisar → Comparar o Combinar y Archivo → Historial de versiones</strong>.",
+            "Aplica «Comparar, combinar y recuperar versiones» al contenido de práctica y observa inmediatamente el resultado.",
+            "Haz un <strong>ejercicio autónomo</strong> con otro ejemplo sin consultar los pasos.",
+            "Utiliza <strong>Archivo → Guardar</strong>, pon un nombre claro al archivo y comprueba el resultado."
+          ],
+          "shortcuts": [],
+          "tip": "Avanza despacio: en «<strong>Comparar, combinar y recuperar versiones</strong>», comprueba el resultado después de cada clic.",
+          "practice": {
+            "intro": "Realiza ahora «Comparar, combinar y recuperar versiones» en un archivo de prueba.",
+            "tasks": [
+              "Crear o abrir un archivo de práctica en Word",
+              "Aplicar la técnica «Comparar, combinar y recuperar versiones» al contenido propuesto",
+              "Guardar y comprobar que el resultado sigue siendo correcto"
+            ]
+          },
+          "quiz": {
+            "question": "¿Qué método ayuda más a dominar «Comparar, combinar y recuperar versiones»?",
+            "options": [
+              "Hacer clic rápidamente sin comprobar",
+              "Seguir los pasos, practicar a solas y comprobar el resultado",
+              "Memorizar todos los botones sin practicar"
+            ],
+            "answer": 1,
+            "explain": "La práctica progresiva y la comprobación del resultado permiten aprender de forma duradera."
+          }
+        }
+      ]
+    },
+    {
+      "number": "Módulo 17",
+      "title": "Redacción inclusiva y multilingüe",
+      "lessons": [
+        {
+          "id": "word-49",
+          "title": "Accesibilidad avanzada del documento",
+          "level": "Profesional",
+          "duration": "28 min",
+          "intro": "Aprende «Accesibilidad avanzada del documento» paso a paso, aunque nunca hayas utilizado este programa. Crearás un resultado concreto antes de continuar.",
+          "objectives": [
+            "Comprender para qué sirve «Accesibilidad avanzada del documento»",
+            "Repetir el método en un archivo propio",
+            "Comprobar y presentar un resultado limpio"
+          ],
+          "steps": [
+            "Abre Word y elige <strong>Archivo → Nuevo</strong>.",
+            "Ve exactamente a <strong>Revisar → Comprobar accesibilidad</strong>.",
+            "Aplica «Accesibilidad avanzada del documento» al contenido de práctica y observa inmediatamente el resultado.",
+            "Haz un <strong>ejercicio autónomo</strong> con otro ejemplo sin consultar los pasos.",
+            "Utiliza <strong>Archivo → Guardar</strong>, pon un nombre claro al archivo y comprueba el resultado."
+          ],
+          "shortcuts": [],
+          "tip": "Avanza despacio: en «<strong>Accesibilidad avanzada del documento</strong>», comprueba el resultado después de cada clic.",
+          "practice": {
+            "intro": "Realiza ahora «Accesibilidad avanzada del documento» en un archivo de prueba.",
+            "tasks": [
+              "Crear o abrir un archivo de práctica en Word",
+              "Aplicar la técnica «Accesibilidad avanzada del documento» al contenido propuesto",
+              "Guardar y comprobar que el resultado sigue siendo correcto"
+            ]
+          },
+          "quiz": {
+            "question": "¿Qué método ayuda más a dominar «Accesibilidad avanzada del documento»?",
+            "options": [
+              "Hacer clic rápidamente sin comprobar",
+              "Seguir los pasos, practicar a solas y comprobar el resultado",
+              "Memorizar todos los botones sin practicar"
+            ],
+            "answer": 1,
+            "explain": "La práctica progresiva y la comprobación del resultado permiten aprender de forma duradera."
+          }
+        },
+        {
+          "id": "word-50",
+          "title": "Idiomas, traducción y lectura en voz alta",
+          "level": "Profesional",
+          "duration": "24 min",
+          "intro": "Aprende «Idiomas, traducción y lectura en voz alta» paso a paso, aunque nunca hayas utilizado este programa. Crearás un resultado concreto antes de continuar.",
+          "objectives": [
+            "Comprender para qué sirve «Idiomas, traducción y lectura en voz alta»",
+            "Repetir el método en un archivo propio",
+            "Comprobar y presentar un resultado limpio"
+          ],
+          "steps": [
+            "Abre Word y elige <strong>Archivo → Nuevo</strong>.",
+            "Ve exactamente a <strong>Revisar → Idioma, Traducir o Leer en voz alta</strong>.",
+            "Aplica «Idiomas, traducción y lectura en voz alta» al contenido de práctica y observa inmediatamente el resultado.",
+            "Haz un <strong>ejercicio autónomo</strong> con otro ejemplo sin consultar los pasos.",
+            "Utiliza <strong>Archivo → Guardar</strong>, pon un nombre claro al archivo y comprueba el resultado."
+          ],
+          "shortcuts": [],
+          "tip": "Avanza despacio: en «<strong>Idiomas, traducción y lectura en voz alta</strong>», comprueba el resultado después de cada clic.",
+          "practice": {
+            "intro": "Realiza ahora «Idiomas, traducción y lectura en voz alta» en un archivo de prueba.",
+            "tasks": [
+              "Crear o abrir un archivo de práctica en Word",
+              "Aplicar la técnica «Idiomas, traducción y lectura en voz alta» al contenido propuesto",
+              "Guardar y comprobar que el resultado sigue siendo correcto"
+            ]
+          },
+          "quiz": {
+            "question": "¿Qué método ayuda más a dominar «Idiomas, traducción y lectura en voz alta»?",
+            "options": [
+              "Hacer clic rápidamente sin comprobar",
+              "Seguir los pasos, practicar a solas y comprobar el resultado",
+              "Memorizar todos los botones sin practicar"
+            ],
+            "answer": 1,
+            "explain": "La práctica progresiva y la comprobación del resultado permiten aprender de forma duradera."
+          }
+        },
+        {
+          "id": "word-51",
+          "title": "Dictado y transcripción con revisión",
+          "level": "Profesional",
+          "duration": "26 min",
+          "intro": "Aprende «Dictado y transcripción con revisión» paso a paso, aunque nunca hayas utilizado este programa. Crearás un resultado concreto antes de continuar.",
+          "objectives": [
+            "Comprender para qué sirve «Dictado y transcripción con revisión»",
+            "Repetir el método en un archivo propio",
+            "Comprobar y presentar un resultado limpio"
+          ],
+          "steps": [
+            "Abre Word y elige <strong>Archivo → Nuevo</strong>.",
+            "Ve exactamente a <strong>Inicio → Dictar → Transcribir</strong>.",
+            "Aplica «Dictado y transcripción con revisión» al contenido de práctica y observa inmediatamente el resultado.",
+            "Haz un <strong>ejercicio autónomo</strong> con otro ejemplo sin consultar los pasos.",
+            "Utiliza <strong>Archivo → Guardar</strong>, pon un nombre claro al archivo y comprueba el resultado."
+          ],
+          "shortcuts": [],
+          "tip": "Avanza despacio: en «<strong>Dictado y transcripción con revisión</strong>», comprueba el resultado después de cada clic.",
+          "practice": {
+            "intro": "Realiza ahora «Dictado y transcripción con revisión» en un archivo de prueba.",
+            "tasks": [
+              "Crear o abrir un archivo de práctica en Word",
+              "Aplicar la técnica «Dictado y transcripción con revisión» al contenido propuesto",
+              "Guardar y comprobar que el resultado sigue siendo correcto"
+            ]
+          },
+          "quiz": {
+            "question": "¿Qué método ayuda más a dominar «Dictado y transcripción con revisión»?",
+            "options": [
+              "Hacer clic rápidamente sin comprobar",
+              "Seguir los pasos, practicar a solas y comprobar el resultado",
+              "Memorizar todos los botones sin practicar"
+            ],
+            "answer": 1,
+            "explain": "La práctica progresiva y la comprobación del resultado permiten aprender de forma duradera."
+          }
+        }
+      ]
+    },
+    {
+      "number": "Módulo 18",
+      "title": "Documentos técnicos y académicos",
+      "lessons": [
+        {
+          "id": "word-52",
+          "title": "Ecuaciones, símbolos y numeración técnica",
+          "level": "Profesional",
+          "duration": "26 min",
+          "intro": "Aprende «Ecuaciones, símbolos y numeración técnica» paso a paso, aunque nunca hayas utilizado este programa. Crearás un resultado concreto antes de continuar.",
+          "objectives": [
+            "Comprender para qué sirve «Ecuaciones, símbolos y numeración técnica»",
+            "Repetir el método en un archivo propio",
+            "Comprobar y presentar un resultado limpio"
+          ],
+          "steps": [
+            "Abre Word y elige <strong>Archivo → Nuevo</strong>.",
+            "Ve exactamente a <strong>Insertar → Ecuación o Símbolo</strong>.",
+            "Aplica «Ecuaciones, símbolos y numeración técnica» al contenido de práctica y observa inmediatamente el resultado.",
+            "Haz un <strong>ejercicio autónomo</strong> con otro ejemplo sin consultar los pasos.",
+            "Utiliza <strong>Archivo → Guardar</strong>, pon un nombre claro al archivo y comprueba el resultado."
+          ],
+          "shortcuts": [],
+          "tip": "Avanza despacio: en «<strong>Ecuaciones, símbolos y numeración técnica</strong>», comprueba el resultado después de cada clic.",
+          "practice": {
+            "intro": "Realiza ahora «Ecuaciones, símbolos y numeración técnica» en un archivo de prueba.",
+            "tasks": [
+              "Crear o abrir un archivo de práctica en Word",
+              "Aplicar la técnica «Ecuaciones, símbolos y numeración técnica» al contenido propuesto",
+              "Guardar y comprobar que el resultado sigue siendo correcto"
+            ]
+          },
+          "quiz": {
+            "question": "¿Qué método ayuda más a dominar «Ecuaciones, símbolos y numeración técnica»?",
+            "options": [
+              "Hacer clic rápidamente sin comprobar",
+              "Seguir los pasos, practicar a solas y comprobar el resultado",
+              "Memorizar todos los botones sin practicar"
+            ],
+            "answer": 1,
+            "explain": "La práctica progresiva y la comprobación del resultado permiten aprender de forma duradera."
+          }
+        },
+        {
+          "id": "word-53",
+          "title": "Fuentes, citas y bibliografía controladas",
+          "level": "Profesional",
+          "duration": "30 min",
+          "intro": "Aprende «Fuentes, citas y bibliografía controladas» paso a paso, aunque nunca hayas utilizado este programa. Crearás un resultado concreto antes de continuar.",
+          "objectives": [
+            "Comprender para qué sirve «Fuentes, citas y bibliografía controladas»",
+            "Repetir el método en un archivo propio",
+            "Comprobar y presentar un resultado limpio"
+          ],
+          "steps": [
+            "Abre Word y elige <strong>Archivo → Nuevo</strong>.",
+            "Ve exactamente a <strong>Referencias → Administrar fuentes → Insertar cita</strong>.",
+            "Aplica «Fuentes, citas y bibliografía controladas» al contenido de práctica y observa inmediatamente el resultado.",
+            "Haz un <strong>ejercicio autónomo</strong> con otro ejemplo sin consultar los pasos.",
+            "Utiliza <strong>Archivo → Guardar</strong>, pon un nombre claro al archivo y comprueba el resultado."
+          ],
+          "shortcuts": [],
+          "tip": "Avanza despacio: en «<strong>Fuentes, citas y bibliografía controladas</strong>», comprueba el resultado después de cada clic.",
+          "practice": {
+            "intro": "Realiza ahora «Fuentes, citas y bibliografía controladas» en un archivo de prueba.",
+            "tasks": [
+              "Crear o abrir un archivo de práctica en Word",
+              "Aplicar la técnica «Fuentes, citas y bibliografía controladas» al contenido propuesto",
+              "Guardar y comprobar que el resultado sigue siendo correcto"
+            ]
+          },
+          "quiz": {
+            "question": "¿Qué método ayuda más a dominar «Fuentes, citas y bibliografía controladas»?",
+            "options": [
+              "Hacer clic rápidamente sin comprobar",
+              "Seguir los pasos, practicar a solas y comprobar el resultado",
+              "Memorizar todos los botones sin practicar"
+            ],
+            "answer": 1,
+            "explain": "La práctica progresiva y la comprobación del resultado permiten aprender de forma duradera."
+          }
+        },
+        {
+          "id": "word-54",
+          "title": "Marcadores, hipervínculos e índice alfabético",
+          "level": "Profesional",
+          "duration": "28 min",
+          "intro": "Aprende «Marcadores, hipervínculos e índice alfabético» paso a paso, aunque nunca hayas utilizado este programa. Crearás un resultado concreto antes de continuar.",
+          "objectives": [
+            "Comprender para qué sirve «Marcadores, hipervínculos e índice alfabético»",
+            "Repetir el método en un archivo propio",
+            "Comprobar y presentar un resultado limpio"
+          ],
+          "steps": [
+            "Abre Word y elige <strong>Archivo → Nuevo</strong>.",
+            "Ve exactamente a <strong>Insertar → Marcador o Vínculo y Referencias → Marcar entrada</strong>.",
+            "Aplica «Marcadores, hipervínculos e índice alfabético» al contenido de práctica y observa inmediatamente el resultado.",
+            "Haz un <strong>ejercicio autónomo</strong> con otro ejemplo sin consultar los pasos.",
+            "Utiliza <strong>Archivo → Guardar</strong>, pon un nombre claro al archivo y comprueba el resultado."
+          ],
+          "shortcuts": [],
+          "tip": "Avanza despacio: en «<strong>Marcadores, hipervínculos e índice alfabético</strong>», comprueba el resultado después de cada clic.",
+          "practice": {
+            "intro": "Realiza ahora «Marcadores, hipervínculos e índice alfabético» en un archivo de prueba.",
+            "tasks": [
+              "Crear o abrir un archivo de práctica en Word",
+              "Aplicar la técnica «Marcadores, hipervínculos e índice alfabético» al contenido propuesto",
+              "Guardar y comprobar que el resultado sigue siendo correcto"
+            ]
+          },
+          "quiz": {
+            "question": "¿Qué método ayuda más a dominar «Marcadores, hipervínculos e índice alfabético»?",
+            "options": [
+              "Hacer clic rápidamente sin comprobar",
+              "Seguir los pasos, practicar a solas y comprobar el resultado",
+              "Memorizar todos los botones sin practicar"
+            ],
+            "answer": 1,
+            "explain": "La práctica progresiva y la comprobación del resultado permiten aprender de forma duradera."
+          }
+        }
+      ]
+    },
+    {
+      "number": "Módulo 19",
+      "title": "Automatización y campos avanzados",
+      "lessons": [
+        {
+          "id": "word-55",
+          "title": "Elementos rápidos, autotexto y propiedades",
+          "level": "Profesional",
+          "duration": "25 min",
+          "intro": "Aprende «Elementos rápidos, autotexto y propiedades» paso a paso, aunque nunca hayas utilizado este programa. Crearás un resultado concreto antes de continuar.",
+          "objectives": [
+            "Comprender para qué sirve «Elementos rápidos, autotexto y propiedades»",
+            "Repetir el método en un archivo propio",
+            "Comprobar y presentar un resultado limpio"
+          ],
+          "steps": [
+            "Abre Word y elige <strong>Archivo → Nuevo</strong>.",
+            "Ve exactamente a <strong>Insertar → Elementos rápidos → Autotexto o Propiedad del documento</strong>.",
+            "Aplica «Elementos rápidos, autotexto y propiedades» al contenido de práctica y observa inmediatamente el resultado.",
+            "Haz un <strong>ejercicio autónomo</strong> con otro ejemplo sin consultar los pasos.",
+            "Utiliza <strong>Archivo → Guardar</strong>, pon un nombre claro al archivo y comprueba el resultado."
+          ],
+          "shortcuts": [],
+          "tip": "Avanza despacio: en «<strong>Elementos rápidos, autotexto y propiedades</strong>», comprueba el resultado después de cada clic.",
+          "practice": {
+            "intro": "Realiza ahora «Elementos rápidos, autotexto y propiedades» en un archivo de prueba.",
+            "tasks": [
+              "Crear o abrir un archivo de práctica en Word",
+              "Aplicar la técnica «Elementos rápidos, autotexto y propiedades» al contenido propuesto",
+              "Guardar y comprobar que el resultado sigue siendo correcto"
+            ]
+          },
+          "quiz": {
+            "question": "¿Qué método ayuda más a dominar «Elementos rápidos, autotexto y propiedades»?",
+            "options": [
+              "Hacer clic rápidamente sin comprobar",
+              "Seguir los pasos, practicar a solas y comprobar el resultado",
+              "Memorizar todos los botones sin practicar"
+            ],
+            "answer": 1,
+            "explain": "La práctica progresiva y la comprobación del resultado permiten aprender de forma duradera."
+          }
+        },
+        {
+          "id": "word-56",
+          "title": "Campos condicionales y cálculos en formularios",
+          "level": "Profesional",
+          "duration": "30 min",
+          "intro": "Aprende «Campos condicionales y cálculos en formularios» paso a paso, aunque nunca hayas utilizado este programa. Crearás un resultado concreto antes de continuar.",
+          "objectives": [
+            "Comprender para qué sirve «Campos condicionales y cálculos en formularios»",
+            "Repetir el método en un archivo propio",
+            "Comprobar y presentar un resultado limpio"
+          ],
+          "steps": [
+            "Abre Word y elige <strong>Archivo → Nuevo</strong>.",
+            "Ve exactamente a <strong>Insertar → Elementos rápidos → Campo</strong>.",
+            "Aplica «Campos condicionales y cálculos en formularios» al contenido de práctica y observa inmediatamente el resultado.",
+            "Haz un <strong>ejercicio autónomo</strong> con otro ejemplo sin consultar los pasos.",
+            "Utiliza <strong>Archivo → Guardar</strong>, pon un nombre claro al archivo y comprueba el resultado."
+          ],
+          "shortcuts": [],
+          "tip": "Avanza despacio: en «<strong>Campos condicionales y cálculos en formularios</strong>», comprueba el resultado después de cada clic.",
+          "practice": {
+            "intro": "Realiza ahora «Campos condicionales y cálculos en formularios» en un archivo de prueba.",
+            "tasks": [
+              "Crear o abrir un archivo de práctica en Word",
+              "Aplicar la técnica «Campos condicionales y cálculos en formularios» al contenido propuesto",
+              "Guardar y comprobar que el resultado sigue siendo correcto"
+            ]
+          },
+          "quiz": {
+            "question": "¿Qué método ayuda más a dominar «Campos condicionales y cálculos en formularios»?",
+            "options": [
+              "Hacer clic rápidamente sin comprobar",
+              "Seguir los pasos, practicar a solas y comprobar el resultado",
+              "Memorizar todos los botones sin practicar"
+            ],
+            "answer": 1,
+            "explain": "La práctica progresiva y la comprobación del resultado permiten aprender de forma duradera."
+          }
+        },
+        {
+          "id": "word-57",
+          "title": "Grabar una macro sencilla de forma segura",
+          "level": "Profesional",
+          "duration": "28 min",
+          "intro": "Aprende «Grabar una macro sencilla de forma segura» paso a paso, aunque nunca hayas utilizado este programa. Crearás un resultado concreto antes de continuar.",
+          "objectives": [
+            "Comprender para qué sirve «Grabar una macro sencilla de forma segura»",
+            "Repetir el método en un archivo propio",
+            "Comprobar y presentar un resultado limpio"
+          ],
+          "steps": [
+            "Abre Word y elige <strong>Archivo → Nuevo</strong>.",
+            "Ve exactamente a <strong>Desarrollador → Grabar macro</strong>.",
+            "Aplica «Grabar una macro sencilla de forma segura» al contenido de práctica y observa inmediatamente el resultado.",
+            "Haz un <strong>ejercicio autónomo</strong> con otro ejemplo sin consultar los pasos.",
+            "Utiliza <strong>Archivo → Guardar</strong>, pon un nombre claro al archivo y comprueba el resultado."
+          ],
+          "shortcuts": [],
+          "tip": "Avanza despacio: en «<strong>Grabar una macro sencilla de forma segura</strong>», comprueba el resultado después de cada clic.",
+          "practice": {
+            "intro": "Realiza ahora «Grabar una macro sencilla de forma segura» en un archivo de prueba.",
+            "tasks": [
+              "Crear o abrir un archivo de práctica en Word",
+              "Aplicar la técnica «Grabar una macro sencilla de forma segura» al contenido propuesto",
+              "Guardar y comprobar que el resultado sigue siendo correcto"
+            ]
+          },
+          "quiz": {
+            "question": "¿Qué método ayuda más a dominar «Grabar una macro sencilla de forma segura»?",
+            "options": [
+              "Hacer clic rápidamente sin comprobar",
+              "Seguir los pasos, practicar a solas y comprobar el resultado",
+              "Memorizar todos los botones sin practicar"
+            ],
+            "answer": 1,
+            "explain": "La práctica progresiva y la comprobación del resultado permiten aprender de forma duradera."
+          }
+        }
+      ]
+    },
+    {
+      "number": "Módulo 20",
+      "title": "Seguridad, publicación y proyecto final",
+      "lessons": [
+        {
+          "id": "word-58",
+          "title": "Inspeccionar metadatos y contenido oculto",
+          "level": "Proyectos",
+          "duration": "26 min",
+          "intro": "Aprende «Inspeccionar metadatos y contenido oculto» paso a paso, aunque nunca hayas utilizado este programa. Crearás un resultado concreto antes de continuar.",
+          "objectives": [
+            "Comprender para qué sirve «Inspeccionar metadatos y contenido oculto»",
+            "Repetir el método en un archivo propio",
+            "Comprobar y presentar un resultado limpio"
+          ],
+          "steps": [
+            "Abre Word y elige <strong>Archivo → Nuevo</strong>.",
+            "Ve exactamente a <strong>Archivo → Información → Inspeccionar documento</strong>.",
+            "Aplica «Inspeccionar metadatos y contenido oculto» al contenido de práctica y observa inmediatamente el resultado.",
+            "Haz un <strong>ejercicio autónomo</strong> con otro ejemplo sin consultar los pasos.",
+            "Utiliza <strong>Archivo → Guardar</strong>, pon un nombre claro al archivo y comprueba el resultado."
+          ],
+          "shortcuts": [],
+          "tip": "Avanza despacio: en «<strong>Inspeccionar metadatos y contenido oculto</strong>», comprueba el resultado después de cada clic.",
+          "practice": {
+            "intro": "Realiza ahora «Inspeccionar metadatos y contenido oculto» en un archivo de prueba.",
+            "tasks": [
+              "Crear o abrir un archivo de práctica en Word",
+              "Aplicar la técnica «Inspeccionar metadatos y contenido oculto» al contenido propuesto",
+              "Guardar y comprobar que el resultado sigue siendo correcto"
+            ]
+          },
+          "quiz": {
+            "question": "¿Qué método ayuda más a dominar «Inspeccionar metadatos y contenido oculto»?",
+            "options": [
+              "Hacer clic rápidamente sin comprobar",
+              "Seguir los pasos, practicar a solas y comprobar el resultado",
+              "Memorizar todos los botones sin practicar"
+            ],
+            "answer": 1,
+            "explain": "La práctica progresiva y la comprobación del resultado permiten aprender de forma duradera."
+          }
+        },
+        {
+          "id": "word-59",
+          "title": "Restringir edición, firmar y publicar en PDF",
+          "level": "Proyectos",
+          "duration": "30 min",
+          "intro": "Aprende «Restringir edición, firmar y publicar en PDF» paso a paso, aunque nunca hayas utilizado este programa. Crearás un resultado concreto antes de continuar.",
+          "objectives": [
+            "Comprender para qué sirve «Restringir edición, firmar y publicar en PDF»",
+            "Repetir el método en un archivo propio",
+            "Comprobar y presentar un resultado limpio"
+          ],
+          "steps": [
+            "Abre Word y elige <strong>Archivo → Nuevo</strong>.",
+            "Ve exactamente a <strong>Revisar → Restringir edición y Archivo → Exportar a PDF</strong>.",
+            "Aplica «Restringir edición, firmar y publicar en PDF» al contenido de práctica y observa inmediatamente el resultado.",
+            "Haz un <strong>ejercicio autónomo</strong> con otro ejemplo sin consultar los pasos.",
+            "Utiliza <strong>Archivo → Guardar</strong>, pon un nombre claro al archivo y comprueba el resultado."
+          ],
+          "shortcuts": [],
+          "tip": "Avanza despacio: en «<strong>Restringir edición, firmar y publicar en PDF</strong>», comprueba el resultado después de cada clic.",
+          "practice": {
+            "intro": "Realiza ahora «Restringir edición, firmar y publicar en PDF» en un archivo de prueba.",
+            "tasks": [
+              "Crear o abrir un archivo de práctica en Word",
+              "Aplicar la técnica «Restringir edición, firmar y publicar en PDF» al contenido propuesto",
+              "Guardar y comprobar que el resultado sigue siendo correcto"
+            ]
+          },
+          "quiz": {
+            "question": "¿Qué método ayuda más a dominar «Restringir edición, firmar y publicar en PDF»?",
+            "options": [
+              "Hacer clic rápidamente sin comprobar",
+              "Seguir los pasos, practicar a solas y comprobar el resultado",
+              "Memorizar todos los botones sin practicar"
+            ],
+            "answer": 1,
+            "explain": "La práctica progresiva y la comprobación del resultado permiten aprender de forma duradera."
+          }
+        },
+        {
+          "id": "word-60",
+          "title": "Proyecto final: documento profesional completo",
+          "level": "Proyectos",
+          "duration": "90 min",
+          "intro": "Aprende «Proyecto final: documento profesional completo» paso a paso, aunque nunca hayas utilizado este programa. Crearás un resultado concreto antes de continuar.",
+          "objectives": [
+            "Comprender para qué sirve «Proyecto final: documento profesional completo»",
+            "Repetir el método en un archivo propio",
+            "Comprobar y presentar un resultado limpio"
+          ],
+          "steps": [
+            "Abre Word y elige <strong>Archivo → Nuevo</strong>.",
+            "Ve exactamente a <strong>Inicio → Estilos, Revisar y Referencias → Actualizar</strong>.",
+            "Aplica «Proyecto final: documento profesional completo» al contenido de práctica y observa inmediatamente el resultado.",
+            "Haz un <strong>ejercicio autónomo</strong> con otro ejemplo sin consultar los pasos.",
+            "Utiliza <strong>Archivo → Guardar</strong>, pon un nombre claro al archivo y comprueba el resultado."
+          ],
+          "shortcuts": [],
+          "tip": "Avanza despacio: en «<strong>Proyecto final: documento profesional completo</strong>», comprueba el resultado después de cada clic.",
+          "practice": {
+            "intro": "Realiza ahora «Proyecto final: documento profesional completo» en un archivo de prueba.",
+            "tasks": [
+              "Crear o abrir un archivo de práctica en Word",
+              "Aplicar la técnica «Proyecto final: documento profesional completo» al contenido propuesto",
+              "Guardar y comprobar que el resultado sigue siendo correcto"
+            ]
+          },
+          "quiz": {
+            "question": "¿Qué método ayuda más a dominar «Proyecto final: documento profesional completo»?",
             "options": [
               "Hacer clic rápidamente sin comprobar",
               "Seguir los pasos, practicar a solas y comprobar el resultado",

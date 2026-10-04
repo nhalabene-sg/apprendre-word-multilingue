@@ -9,9 +9,9 @@
     { key: 'beginner', end: 10 },
     { key: 'basic', end: 18 },
     { key: 'intermediate', end: 27 },
-    { key: 'advanced', end: 36 },
-    { key: 'professional', end: 42 },
-    { key: 'projects', end: 45 }
+    { key: 'advanced', end: 42 },
+    { key: 'professional', end: 57 },
+    { key: 'projects', end: 60 }
   ];
 
   function levelKeyForIndex(index) {

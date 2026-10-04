@@ -10,4 +10,4 @@ APRENDER WORD — CURSO INTERATIVO
 Para abrir o curso Excel, use a ligação no fundo do menu lateral ou abra a pasta "Excel".
 
 Idioma: Português de Portugal.
-Conteúdo: 15 módulos, 45 lições e 7 níveis — Iniciação, Principiante, Básico, Intermédio, Avançado, Profissional e Projetos. Cada lição inclui um exercício guiado, um exercício autónomo, um desafio e um questionário. Cada módulo termina com um projeto prático, num total de 15 projetos.
+Conteúdo: 20 módulos, 60 lições e 7 níveis — Iniciação, Principiante, Básico, Intermédio, Avançado, Profissional e Projetos. Cada lição inclui um exercício guiado, um exercício autónomo, um desafio e um questionário. Cada módulo termina com um projeto prático, num total de 20 projetos.
