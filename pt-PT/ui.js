@@ -68,6 +68,16 @@ window.COURSE_UI = {
   stepLabel: 'Passo {current} de {total}',
   exactPath: 'Caminho exato',
   workspaceArea: 'Área de trabalho do {course}',
+  locateControl: 'Localizar',
+  performClick: 'Clicar ou premir',
+  verifyChange: 'Confirmar o resultado',
+  reproduceNow: 'Reproduza agora no seu PC',
+  reproduceHelp: 'Pause a demonstração, faça este passo no {course} e compare o seu ecrã com o resultado esperado.',
+  keyboardShortcuts: 'Atalhos desta lição',
+  keyboardHelp: 'Prima as teclas ligadas por + ao mesmo tempo. As designações abaixo correspondem ao teclado português (Portugal).',
+  keyboardKeys: {
+    ctrl: 'Ctrl', shift: 'Shift', alt: 'Alt', enter: 'Enter', tab: 'Tab', arrow: 'Seta', space: 'Espaço', escape: 'Esc'
+  },
   activateDarkMode: 'Ativar modo escuro',
   activateLightMode: 'Ativar modo claro',
   darkModeEnabled: 'Modo escuro ativado.',

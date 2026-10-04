@@ -26,6 +26,9 @@ window.COURSE = {
             "Complete an <strong>independent exercise</strong> with another example without reading the steps.",
             "Choose <strong>File → Save</strong>, give the file a clear name and check the result."
           ],
+          "shortcuts": [
+            "Ctrl + S"
+          ],
           "tip": "Work slowly: for “<strong>Create your first document</strong>”, check the result after every click before continuing.",
           "practice": {
             "intro": "Now complete “Create your first document” in a practice file.",
@@ -63,6 +66,9 @@ window.COURSE = {
             "Apply “Explore the ribbon and page” to the practice content and observe the result immediately.",
             "Complete an <strong>independent exercise</strong> with another example without reading the steps.",
             "Choose <strong>File → Save</strong>, give the file a clear name and check the result."
+          ],
+          "shortcuts": [
+            "Ctrl + F1"
           ],
           "tip": "Work slowly: for “<strong>Explore the ribbon and page</strong>”, check the result after every click before continuing.",
           "image": {
@@ -108,6 +114,9 @@ window.COURSE = {
             "Complete an <strong>independent exercise</strong> with another example without reading the steps.",
             "Choose <strong>File → Save</strong>, give the file a clear name and check the result."
           ],
+          "shortcuts": [
+            "Ctrl + S"
+          ],
           "tip": "Work slowly: for “<strong>Save, open and export</strong>”, check the result after every click before continuing.",
           "practice": {
             "intro": "Now complete “Save, open and export” in a practice file.",
@@ -152,6 +161,10 @@ window.COURSE = {
             "Complete an <strong>independent exercise</strong> with another example without reading the steps.",
             "Choose <strong>File → Save</strong>, give the file a clear name and check the result."
           ],
+          "shortcuts": [
+            "Ctrl + A",
+            "Shift"
+          ],
           "tip": "Work slowly: for “<strong>Select text accurately</strong>”, check the result after every click before continuing.",
           "practice": {
             "intro": "Now complete “Select text accurately” in a practice file.",
@@ -190,6 +203,10 @@ window.COURSE = {
             "Complete an <strong>independent exercise</strong> with another example without reading the steps.",
             "Choose <strong>File → Save</strong>, give the file a clear name and check the result."
           ],
+          "shortcuts": [
+            "Ctrl + C",
+            "Ctrl + V"
+          ],
           "tip": "Work slowly: for “<strong>Copy, cut and paste</strong>”, check the result after every click before continuing.",
           "practice": {
             "intro": "Now complete “Copy, cut and paste” in a practice file.",
@@ -227,6 +244,11 @@ window.COURSE = {
             "Apply “Undo, redo, find and replace” to the practice content and observe the result immediately.",
             "Complete an <strong>independent exercise</strong> with another example without reading the steps.",
             "Choose <strong>File → Save</strong>, give the file a clear name and check the result."
+          ],
+          "shortcuts": [
+            "Ctrl + Z",
+            "Ctrl + Y",
+            "Ctrl + H"
           ],
           "tip": "Work slowly: for “<strong>Undo, redo, find and replace</strong>”, check the result after every click before continuing.",
           "practice": {
@@ -272,6 +294,7 @@ window.COURSE = {
             "Complete an <strong>independent exercise</strong> with another example without reading the steps.",
             "Choose <strong>File → Save</strong>, give the file a clear name and check the result."
           ],
+          "shortcuts": [],
           "tip": "Work slowly: for “<strong>Font, size and emphasis</strong>”, check the result after every click before continuing.",
           "practice": {
             "intro": "Now complete “Font, size and emphasis” in a practice file.",
@@ -310,6 +333,7 @@ window.COURSE = {
             "Complete an <strong>independent exercise</strong> with another example without reading the steps.",
             "Choose <strong>File → Save</strong>, give the file a clear name and check the result."
           ],
+          "shortcuts": [],
           "tip": "Work slowly: for “<strong>Alignment, indents and spacing</strong>”, check the result after every click before continuing.",
           "practice": {
             "intro": "Now complete “Alignment, indents and spacing” in a practice file.",
@@ -347,6 +371,10 @@ window.COURSE = {
             "Apply “Bulleted and numbered lists” to the practice content and observe the result immediately.",
             "Complete an <strong>independent exercise</strong> with another example without reading the steps.",
             "Choose <strong>File → Save</strong>, give the file a clear name and check the result."
+          ],
+          "shortcuts": [
+            "Tab",
+            "Shift + Tab"
           ],
           "tip": "Work slowly: for “<strong>Bulleted and numbered lists</strong>”, check the result after every click before continuing.",
           "practice": {
@@ -392,6 +420,7 @@ window.COURSE = {
             "Complete an <strong>independent exercise</strong> with another example without reading the steps.",
             "Choose <strong>File → Save</strong>, give the file a clear name and check the result."
           ],
+          "shortcuts": [],
           "tip": "Work slowly: for “<strong>Margins, orientation and size</strong>”, check the result after every click before continuing.",
           "practice": {
             "intro": "Now complete “Margins, orientation and size” in a practice file.",
@@ -429,6 +458,9 @@ window.COURSE = {
             "Apply “Page and section breaks” to the practice content and observe the result immediately.",
             "Complete an <strong>independent exercise</strong> with another example without reading the steps.",
             "Choose <strong>File → Save</strong>, give the file a clear name and check the result."
+          ],
+          "shortcuts": [
+            "Ctrl + Enter"
           ],
           "tip": "Work slowly: for “<strong>Page and section breaks</strong>”, check the result after every click before continuing.",
           "practice": {
@@ -468,6 +500,7 @@ window.COURSE = {
             "Complete an <strong>independent exercise</strong> with another example without reading the steps.",
             "Choose <strong>File → Save</strong>, give the file a clear name and check the result."
           ],
+          "shortcuts": [],
           "tip": "Work slowly: for “<strong>Columns and hyphenation</strong>”, check the result after every click before continuing.",
           "practice": {
             "intro": "Now complete “Columns and hyphenation” in a practice file.",
@@ -512,6 +545,7 @@ window.COURSE = {
             "Complete an <strong>independent exercise</strong> with another example without reading the steps.",
             "Choose <strong>File → Save</strong>, give the file a clear name and check the result."
           ],
+          "shortcuts": [],
           "tip": "Work slowly: for “<strong>Use styles correctly</strong>”, check the result after every click before continuing.",
           "practice": {
             "intro": "Now complete “Use styles correctly” in a practice file.",
@@ -550,6 +584,7 @@ window.COURSE = {
             "Complete an <strong>independent exercise</strong> with another example without reading the steps.",
             "Choose <strong>File → Save</strong>, give the file a clear name and check the result."
           ],
+          "shortcuts": [],
           "tip": "Work slowly: for “<strong>Themes and visual identity</strong>”, check the result after every click before continuing.",
           "practice": {
             "intro": "Now complete “Themes and visual identity” in a practice file.",
@@ -588,6 +623,7 @@ window.COURSE = {
             "Complete an <strong>independent exercise</strong> with another example without reading the steps.",
             "Choose <strong>File → Save</strong>, give the file a clear name and check the result."
           ],
+          "shortcuts": [],
           "tip": "Work slowly: for “<strong>Automatic table of contents and Navigation Pane</strong>”, check the result after every click before continuing.",
           "practice": {
             "intro": "Now complete “Automatic table of contents and Navigation Pane” in a practice file.",
@@ -632,6 +668,7 @@ window.COURSE = {
             "Complete an <strong>independent exercise</strong> with another example without reading the steps.",
             "Choose <strong>File → Save</strong>, give the file a clear name and check the result."
           ],
+          "shortcuts": [],
           "tip": "Work slowly: for “<strong>Create and format tables</strong>”, check the result after every click before continuing.",
           "practice": {
             "intro": "Now complete “Create and format tables” in a practice file.",
@@ -670,6 +707,7 @@ window.COURSE = {
             "Complete an <strong>independent exercise</strong> with another example without reading the steps.",
             "Choose <strong>File → Save</strong>, give the file a clear name and check the result."
           ],
+          "shortcuts": [],
           "tip": "Work slowly: for “<strong>Insert and resize pictures</strong>”, check the result after every click before continuing.",
           "image": {
             "file": "images/inserir-imagem.png",
@@ -714,6 +752,7 @@ window.COURSE = {
             "Complete an <strong>independent exercise</strong> with another example without reading the steps.",
             "Choose <strong>File → Save</strong>, give the file a clear name and check the result."
           ],
+          "shortcuts": [],
           "tip": "Work slowly: for “<strong>Wrap text and position objects</strong>”, check the result after every click before continuing.",
           "practice": {
             "intro": "Now complete “Wrap text and position objects” in a practice file.",
@@ -758,6 +797,7 @@ window.COURSE = {
             "Complete an <strong>independent exercise</strong> with another example without reading the steps.",
             "Choose <strong>File → Save</strong>, give the file a clear name and check the result."
           ],
+          "shortcuts": [],
           "tip": "Work slowly: for “<strong>Headers and footers</strong>”, check the result after every click before continuing.",
           "image": {
             "file": "images/cabecalho-word.png",
@@ -802,6 +842,7 @@ window.COURSE = {
             "Complete an <strong>independent exercise</strong> with another example without reading the steps.",
             "Choose <strong>File → Save</strong>, give the file a clear name and check the result."
           ],
+          "shortcuts": [],
           "tip": "Work slowly: for “<strong>Page numbers</strong>”, check the result after every click before continuing.",
           "practice": {
             "intro": "Now complete “Page numbers” in a practice file.",
@@ -839,6 +880,10 @@ window.COURSE = {
             "Apply “Automatic fields and properties” to the practice content and observe the result immediately.",
             "Complete an <strong>independent exercise</strong> with another example without reading the steps.",
             "Choose <strong>File → Save</strong>, give the file a clear name and check the result."
+          ],
+          "shortcuts": [
+            "F9",
+            "Ctrl + A"
           ],
           "tip": "Work slowly: for “<strong>Automatic fields and properties</strong>”, check the result after every click before continuing.",
           "practice": {
@@ -884,6 +929,7 @@ window.COURSE = {
             "Complete an <strong>independent exercise</strong> with another example without reading the steps.",
             "Choose <strong>File → Save</strong>, give the file a clear name and check the result."
           ],
+          "shortcuts": [],
           "tip": "Work slowly: for “<strong>Spelling, grammar and Editor</strong>”, check the result after every click before continuing.",
           "practice": {
             "intro": "Now complete “Spelling, grammar and Editor” in a practice file.",
@@ -922,6 +968,7 @@ window.COURSE = {
             "Complete an <strong>independent exercise</strong> with another example without reading the steps.",
             "Choose <strong>File → Save</strong>, give the file a clear name and check the result."
           ],
+          "shortcuts": [],
           "tip": "Work slowly: for “<strong>Comments and @mentions</strong>”, check the result after every click before continuing.",
           "practice": {
             "intro": "Now complete “Comments and @mentions” in a practice file.",
@@ -960,6 +1007,7 @@ window.COURSE = {
             "Complete an <strong>independent exercise</strong> with another example without reading the steps.",
             "Choose <strong>File → Save</strong>, give the file a clear name and check the result."
           ],
+          "shortcuts": [],
           "tip": "Work slowly: for “<strong>Track changes</strong>”, check the result after every click before continuing.",
           "practice": {
             "intro": "Now complete “Track changes” in a practice file.",
@@ -1004,6 +1052,7 @@ window.COURSE = {
             "Complete an <strong>independent exercise</strong> with another example without reading the steps.",
             "Choose <strong>File → Save</strong>, give the file a clear name and check the result."
           ],
+          "shortcuts": [],
           "tip": "Work slowly: for “<strong>Footnotes and citations</strong>”, check the result after every click before continuing.",
           "practice": {
             "intro": "Now complete “Footnotes and citations” in a practice file.",
@@ -1041,6 +1090,9 @@ window.COURSE = {
             "Apply “Captions and cross-references” to the practice content and observe the result immediately.",
             "Complete an <strong>independent exercise</strong> with another example without reading the steps.",
             "Choose <strong>File → Save</strong>, give the file a clear name and check the result."
+          ],
+          "shortcuts": [
+            "Ctrl + A"
           ],
           "tip": "Work slowly: for “<strong>Captions and cross-references</strong>”, check the result after every click before continuing.",
           "practice": {
@@ -1080,6 +1132,7 @@ window.COURSE = {
             "Complete an <strong>independent exercise</strong> with another example without reading the steps.",
             "Choose <strong>File → Save</strong>, give the file a clear name and check the result."
           ],
+          "shortcuts": [],
           "tip": "Work slowly: for “<strong>Mail merge</strong>”, check the result after every click before continuing.",
           "practice": {
             "intro": "Now complete “Mail merge” in a practice file.",
@@ -1124,6 +1177,7 @@ window.COURSE = {
             "Complete an <strong>independent exercise</strong> with another example without reading the steps.",
             "Choose <strong>File → Save</strong>, give the file a clear name and check the result."
           ],
+          "shortcuts": [],
           "tip": "Work slowly: for “<strong>Accessibility and readability</strong>”, check the result after every click before continuing.",
           "practice": {
             "intro": "Now complete “Accessibility and readability” in a practice file.",
@@ -1162,6 +1216,7 @@ window.COURSE = {
             "Complete an <strong>independent exercise</strong> with another example without reading the steps.",
             "Choose <strong>File → Save</strong>, give the file a clear name and check the result."
           ],
+          "shortcuts": [],
           "tip": "Work slowly: for “<strong>Build a complete report</strong>”, check the result after every click before continuing.",
           "practice": {
             "intro": "Now complete “Build a complete report” in a practice file.",
@@ -1199,6 +1254,9 @@ window.COURSE = {
             "Apply “Final review and delivery” to the practice content and observe the result immediately.",
             "Complete an <strong>independent exercise</strong> with another example without reading the steps.",
             "Choose <strong>File → Save</strong>, give the file a clear name and check the result."
+          ],
+          "shortcuts": [
+            "Ctrl + A"
           ],
           "tip": "Work slowly: for “<strong>Final review and delivery</strong>”, check the result after every click before continuing.",
           "practice": {
@@ -1244,6 +1302,7 @@ window.COURSE = {
             "Complete an <strong>independent exercise</strong> with another example without reading the steps.",
             "Choose <strong>File → Save</strong>, give the file a clear name and check the result."
           ],
+          "shortcuts": [],
           "tip": "Work slowly: for “<strong>Create a reusable template</strong>”, check the result after every click before continuing.",
           "practice": {
             "intro": "Now complete “Create a reusable template” in a practice file.",
@@ -1282,6 +1341,7 @@ window.COURSE = {
             "Complete an <strong>independent exercise</strong> with another example without reading the steps.",
             "Choose <strong>File → Save</strong>, give the file a clear name and check the result."
           ],
+          "shortcuts": [],
           "tip": "Work slowly: for “<strong>Content controls and lists</strong>”, check the result after every click before continuing.",
           "practice": {
             "intro": "Now complete “Content controls and lists” in a practice file.",
@@ -1320,6 +1380,7 @@ window.COURSE = {
             "Complete an <strong>independent exercise</strong> with another example without reading the steps.",
             "Choose <strong>File → Save</strong>, give the file a clear name and check the result."
           ],
+          "shortcuts": [],
           "tip": "Work slowly: for “<strong>Protect and complete a form</strong>”, check the result after every click before continuing.",
           "practice": {
             "intro": "Now complete “Protect and complete a form” in a practice file.",
@@ -1364,6 +1425,7 @@ window.COURSE = {
             "Complete an <strong>independent exercise</strong> with another example without reading the steps.",
             "Choose <strong>File → Save</strong>, give the file a clear name and check the result."
           ],
+          "shortcuts": [],
           "tip": "Work slowly: for “<strong>Covers and visual identity</strong>”, check the result after every click before continuing.",
           "practice": {
             "intro": "Now complete “Covers and visual identity” in a practice file.",
@@ -1402,6 +1464,7 @@ window.COURSE = {
             "Complete an <strong>independent exercise</strong> with another example without reading the steps.",
             "Choose <strong>File → Save</strong>, give the file a clear name and check the result."
           ],
+          "shortcuts": [],
           "tip": "Work slowly: for “<strong>Text boxes, shapes and SmartArt</strong>”, check the result after every click before continuing.",
           "practice": {
             "intro": "Now complete “Text boxes, shapes and SmartArt” in a practice file.",
@@ -1440,6 +1503,7 @@ window.COURSE = {
             "Complete an <strong>independent exercise</strong> with another example without reading the steps.",
             "Choose <strong>File → Save</strong>, give the file a clear name and check the result."
           ],
+          "shortcuts": [],
           "tip": "Work slowly: for “<strong>Sections with different orientations</strong>”, check the result after every click before continuing.",
           "practice": {
             "intro": "Now complete “Sections with different orientations” in a practice file.",
@@ -1484,6 +1548,7 @@ window.COURSE = {
             "Complete an <strong>independent exercise</strong> with another example without reading the steps.",
             "Choose <strong>File → Save</strong>, give the file a clear name and check the result."
           ],
+          "shortcuts": [],
           "tip": "Work slowly: for “<strong>Labels and envelopes</strong>”, check the result after every click before continuing.",
           "practice": {
             "intro": "Now complete “Labels and envelopes” in a practice file.",
@@ -1522,6 +1587,7 @@ window.COURSE = {
             "Complete an <strong>independent exercise</strong> with another example without reading the steps.",
             "Choose <strong>File → Save</strong>, give the file a clear name and check the result."
           ],
+          "shortcuts": [],
           "tip": "Work slowly: for “<strong>Rules in a mail merge</strong>”, check the result after every click before continuing.",
           "practice": {
             "intro": "Now complete “Rules in a mail merge” in a practice file.",
@@ -1560,6 +1626,7 @@ window.COURSE = {
             "Complete an <strong>independent exercise</strong> with another example without reading the steps.",
             "Choose <strong>File → Save</strong>, give the file a clear name and check the result."
           ],
+          "shortcuts": [],
           "tip": "Work slowly: for “<strong>Create a directory or catalogue</strong>”, check the result after every click before continuing.",
           "practice": {
             "intro": "Now complete “Create a directory or catalogue” in a practice file.",
@@ -1604,6 +1671,7 @@ window.COURSE = {
             "Complete an <strong>independent exercise</strong> with another example without reading the steps.",
             "Choose <strong>File → Save</strong>, give the file a clear name and check the result."
           ],
+          "shortcuts": [],
           "tip": "Work slowly: for “<strong>Organise with the Navigation Pane</strong>”, check the result after every click before continuing.",
           "practice": {
             "intro": "Now complete “Organise with the Navigation Pane” in a practice file.",
@@ -1642,6 +1710,7 @@ window.COURSE = {
             "Complete an <strong>independent exercise</strong> with another example without reading the steps.",
             "Choose <strong>File → Save</strong>, give the file a clear name and check the result."
           ],
+          "shortcuts": [],
           "tip": "Work slowly: for “<strong>Table of figures and tables</strong>”, check the result after every click before continuing.",
           "practice": {
             "intro": "Now complete “Table of figures and tables” in a practice file.",
@@ -1680,6 +1749,7 @@ window.COURSE = {
             "Complete an <strong>independent exercise</strong> with another example without reading the steps.",
             "Choose <strong>File → Save</strong>, give the file a clear name and check the result."
           ],
+          "shortcuts": [],
           "tip": "Work slowly: for “<strong>Properties, versions and structure</strong>”, check the result after every click before continuing.",
           "practice": {
             "intro": "Now complete “Properties, versions and structure” in a practice file.",
@@ -1724,6 +1794,7 @@ window.COURSE = {
             "Complete an <strong>independent exercise</strong> with another example without reading the steps.",
             "Choose <strong>File → Save</strong>, give the file a clear name and check the result."
           ],
+          "shortcuts": [],
           "tip": "Work slowly: for “<strong>Project: create a CV and cover letter</strong>”, check the result after every click before continuing.",
           "practice": {
             "intro": "Now complete “Project: create a CV and cover letter” in a practice file.",
@@ -1762,6 +1833,7 @@ window.COURSE = {
             "Complete an <strong>independent exercise</strong> with another example without reading the steps.",
             "Choose <strong>File → Save</strong>, give the file a clear name and check the result."
           ],
+          "shortcuts": [],
           "tip": "Work slowly: for “<strong>Project: create a professional manual or report</strong>”, check the result after every click before continuing.",
           "practice": {
             "intro": "Now complete “Project: create a professional manual or report” in a practice file.",
@@ -1800,6 +1872,7 @@ window.COURSE = {
             "Complete an <strong>independent exercise</strong> with another example without reading the steps.",
             "Choose <strong>File → Save</strong>, give the file a clear name and check the result."
           ],
+          "shortcuts": [],
           "tip": "Work slowly: for “<strong>Project: create a newsletter</strong>”, check the result after every click before continuing.",
           "practice": {
             "intro": "Now complete “Project: create a newsletter” in a practice file.",
