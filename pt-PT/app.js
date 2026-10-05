@@ -132,35 +132,40 @@
   function excelScene(item) {
     const topic = `${item.module.title} ${item.title}`.toLocaleLowerCase(t.locale);
     if (/gráfico|gráfic|graphique|chart|painel|panel|tableau de bord|dashboard/.test(topic)) {
-      return `<div class="scene chart-scene"><div class="kpi-row"><span><b>4 820</b>${escapeHTML(t.scene.sales)}</span><span><b>68</b>${escapeHTML(t.scene.orders)}</span><span><b>+12%</b>${escapeHTML(t.scene.growth)}</span></div><div class="mini-chart" aria-label="${escapeHTML(t.scene.chartAria)}"><i style="height:42%"></i><i style="height:66%"></i><i style="height:53%"></i><i style="height:88%"></i><i style="height:74%"></i></div></div>`;
+      return `<div class="scene workbook-scene">${sheetHTML(false)}<div class="sheet-object chart-object"><div class="kpi-row"><span><b>4 820</b>${escapeHTML(t.scene.sales)}</span><span><b>68</b>${escapeHTML(t.scene.orders)}</span><span><b>+12%</b>${escapeHTML(t.scene.growth)}</span></div><div class="mini-chart" aria-label="${escapeHTML(t.scene.chartAria)}"><i style="height:42%"></i><i style="height:66%"></i><i style="height:53%"></i><i style="height:88%"></i><i style="height:74%"></i></div></div></div>`;
     }
     if (/fórmula|formula|formule|funç|función|fonction|function|soma|suma|somme|sum\b|se\b|si\b|if\b|procv|procv|vlookup|procx|buscarx|recherchex|xlookup|filtrar|filtrer|filter|ordenar|trier|sort|único|unique|nome|nombre|nom|name|referência|referencia|référence|reference/.test(topic)) {
-      return `<div class="scene"><div class="formula-bar"><b>fx</b><span>${escapeHTML(t.scene.formula)}</span></div>${sheetHTML(true)}</div>`;
+      return `<div class="scene workbook-scene">${sheetHTML(true)}</div>`;
     }
     if (/tabela dinâmica|tabla dinámica|tableau croisé|pivot table|subtotal|cenário|escenario|scénario|scenario|solver|análise|análisis|analyse|analysis/.test(topic)) {
-      return `<div class="scene pivot-scene"><div class="pivot-grid"><b>${escapeHTML(t.scene.category)}</b><b>${escapeHTML(t.scene.total)}</b><span>${escapeHTML(t.scene.stationery)}</span><span>1 240</span><span>${escapeHTML(t.scene.archive)}</span><span>980</span><strong>${escapeHTML(t.scene.grandTotal)}</strong><strong>2 220</strong></div><div class="field-list"><b>${escapeHTML(t.scene.fields)}</b><span>☑ ${escapeHTML(t.scene.product)}</span><span>☑ ${escapeHTML(t.scene.sales)}</span><span>☐ ${escapeHTML(t.scene.region)}</span></div></div>`;
+      return `<div class="scene workbook-scene">${sheetHTML(false)}<div class="sheet-object pivot-object"><div class="pivot-grid"><b>${escapeHTML(t.scene.category)}</b><b>${escapeHTML(t.scene.total)}</b><span>${escapeHTML(t.scene.stationery)}</span><span>1 240</span><span>${escapeHTML(t.scene.archive)}</span><span>980</span><strong>${escapeHTML(t.scene.grandTotal)}</strong><strong>2 220</strong></div><div class="field-list"><b>${escapeHTML(t.scene.fields)}</b><span>☑ ${escapeHTML(t.scene.product)}</span><span>☑ ${escapeHTML(t.scene.sales)}</span><span>☐ ${escapeHTML(t.scene.region)}</span></div></div></div>`;
     }
     if (/power query|importar|importer|import|csv|limpar|limpiar|nettoyer|clean|duplicados|duplicados|doublons|duplicates|validação|validación|validation|ordenar|ordenar|trier|sort|filtro|filtre|filter|texto|texte|text|datas|fechas|dates/.test(topic)) {
-      return `<div class="scene data-scene"><div class="query-steps"><b>${escapeHTML(t.scene.appliedSteps)}</b><span>✓ ${escapeHTML(t.scene.source)}</span><span>✓ ${escapeHTML(t.scene.headers)}</span><span class="active">${escapeHTML(t.scene.changedTypes)}</span></div>${sheetHTML(false)}</div>`;
+      return `<div class="scene data-scene"><div class="query-steps"><b>${escapeHTML(t.scene.appliedSteps)}</b><span>✓ ${escapeHTML(t.scene.source)}</span><span>✓ ${escapeHTML(t.scene.headers)}</span><span class="active">${escapeHTML(t.scene.changedTypes)}</span></div><div>${sheetHTML(false)}</div></div>`;
     }
-    return `<div class="scene">${sheetHTML(false)}</div>`;
+    return `<div class="scene workbook-scene">${sheetHTML(false)}</div>`;
   }
 
   function sheetHTML(formulaMode) {
-    const columns = ['A', 'B', 'C', 'D', 'E', 'F'];
-    const rows = [1, 2, 3, 4, 5, 7, 9, 10, 11, 20];
+    const columns = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H'];
+    const rows = Array.from({ length: 20 }, (_, index) => index + 1);
     const values = {
-      A1: t.scene.product, B1: t.scene.price, C1: t.scene.quantity, D1: t.scene.total, E1: t.scene.status,
-      A2: t.scene.notebook, B2: '3,50', C2: '4', D2: formulaMode ? '=B2*C2' : '14,00', E2: t.scene.paid,
-      A3: t.scene.pen, B3: '1,20', C3: '10', D3: '12,00', E3: t.scene.paid,
-      A4: t.scene.folder, B4: '4,90', C4: '3', D4: '14,70', E4: t.scene.pending
+      A1: t.scene.product, B1: t.scene.price, C1: t.scene.quantity, D1: t.scene.total, E1: t.scene.status, F1: t.scene.region, G1: t.scene.month, H1: t.scene.category,
+      A2: t.scene.notebook, B2: '3,50', C2: '4', D2: formulaMode ? '=B2*C2' : '14,00', E2: t.scene.paid, F2: 'R1', G2: '01/2026', H2: t.scene.stationery,
+      A3: t.scene.pen, B3: '1,20', C3: '10', D3: '12,00', E3: t.scene.paid, F3: 'R2', G3: '01/2026', H3: t.scene.stationery,
+      A4: t.scene.folder, B4: '4,90', C4: '3', D4: '14,70', E4: t.scene.pending, F4: 'R3', G4: '02/2026', H4: t.scene.archive,
+      A5: t.scene.notebook, B5: '5,20', C5: '6', D5: '31,20', E5: t.scene.paid, F5: 'R1', G5: '02/2026', H5: t.scene.stationery,
+      A6: t.scene.pen, B6: '1,20', C6: '8', D6: '9,60', E6: t.scene.pending, F6: 'R2', G6: '03/2026', H6: t.scene.stationery,
+      A7: t.scene.folder, B7: '4,90', C7: '5', D7: '24,50', E7: t.scene.paid, F7: 'R3', G7: '03/2026', H7: t.scene.archive,
+      A8: t.scene.notebook, B8: '3,50', C8: '7', D8: '24,50', E8: t.scene.paid, F8: 'R1', G8: '04/2026', H8: t.scene.stationery
     };
     const headers = `<div class="cell head"></div>${columns.map(column => `<div class="cell head" data-column="${column}">${column}</div>`).join('')}`;
     const cells = rows.map(row => `<div class="cell head" data-row="${row}">${row}</div>${columns.map(column => {
       const reference = `${column}${row}`;
       return `<div class="cell" data-cell="${reference}">${escapeHTML(values[reference] || '')}</div>`;
     }).join('')}`).join('');
-    return `<div class="sheet-shell"><div class="cell-readout"><span>${escapeHTML(t.selectedCell)}</span><strong id="sceneCellRef">—</strong></div><div class="sheet-viewport"><div class="sheet">${headers}${cells}</div></div></div>`;
+    const formula = formulaMode ? t.scene.formula : '';
+    return `<div class="sheet-shell"><div class="sheet-commandbar"><div class="name-box"><span>${escapeHTML(t.selectedCell)}</span><strong id="sceneCellRef">—</strong></div><div class="formula-input"><b>fx</b><span id="sceneFormula">${escapeHTML(formula)}</span></div></div><div class="sheet-viewport"><div class="sheet">${headers}${cells}</div></div><div class="sheet-tabs" aria-hidden="true"><strong>＋</strong><span class="active">${escapeHTML(t.scene.sales)}</span><span>${escapeHTML(t.scene.results)}</span><span>${escapeHTML(t.scene.archive)}</span></div></div>`;
   }
 
   function wordScene(item) {
@@ -330,11 +335,13 @@
     const reproduce = `<div class="reproduce-bar"><span aria-hidden="true">🖥</span><p><strong>${escapeHTML(t.reproduceNow)}</strong><small>${escapeHTML(format(t.reproduceHelp, { course: course.name }))}</small></p><button id="coachDone" type="button">✓ ${escapeHTML(t.markStepDone)}</button></div>`;
     const coach = `${flow}<div class="guide-progress" aria-label="${escapeHTML(t.stepByStep)}">${dots}</div><div class="instruction-panel" aria-live="polite"><div><span>1</span><p><b>${escapeHTML(t.whereToClick)}</b><strong id="guideWhere">${escapeHTML(first.where)}</strong></p></div><div><span>2</span><p><b>${escapeHTML(t.whatToDo)}</b><strong id="guideDo">${escapeHTML(first.action)}</strong></p></div><div><span>3</span><p><b>${escapeHTML(t.expectedResult)}</b><strong id="guideResult">${escapeHTML(first.result)}</strong></p></div></div>${reproduce}<div class="click-coach"><span class="coach-count" id="coachCount">1/${item.steps.length}</span><p><strong id="coachStatus">${escapeHTML(t.demoPaused)}</strong><span id="coachText">${escapeHTML(first.action)}</span></p><button id="coachNext" type="button">${escapeHTML(t.showNextPoint)}</button></div>`;
     const cursor = `<div class="demo-cursor" id="demoCursor" aria-hidden="true"><i>↖</i><b>${escapeHTML(t.clickHere)}</b></div><div class="result-stamp" aria-hidden="true">✓ ${escapeHTML(t.verifyChange)}</div>`;
+    const workspaceGuide = `<aside class="workspace-instruction" id="workspaceInstruction" aria-live="polite"><span class="workspace-step" id="workspaceStep">${escapeHTML(format(t.stepLabel, { current: 1, total: item.steps.length }))}</span><div><b id="workspaceWhere">${escapeHTML(first.where)}</b><strong id="workspaceAction">${escapeHTML(first.action)}</strong><small id="workspaceResult">${escapeHTML(first.result)}</small></div></aside>`;
+    const workspacePins = item.steps.map((step, index) => `<button type="button" class="workspace-pin" data-workspace-step="${index}" style="--pin-index:${index}" aria-label="${escapeHTML(format(t.stepLabel, { current: index + 1, total: item.steps.length }))}"><span>${index + 1}</span></button>`).join('');
     const keyboard = keyboardHTML(item);
     if (course.slug === 'excel') {
-      return `<div class="guided-block" id="guidedBlock"><div class="guide-heading"><div><strong>${escapeHTML(t.visualGuide)}</strong><span>${escapeHTML(t.visualGuideHelp)}</span></div><span class="live-badge">${escapeHTML(t.stepByStep)}</span></div>${controls}${keyboard}<div class="office-preview" id="officePreview" data-demo-zone="ribbon" aria-label="${escapeHTML(t.excelSimulation)}"><div class="preview-titlebar">${escapeHTML(t.excelWorkbookTitle)}</div><div class="preview-ribbon">${ribbonHTML()}</div><div class="guided-actions">${actions}</div>${excelScene(item)}${cursor}</div>${coach}</div>`;
+      return `<div class="guided-block" id="guidedBlock"><div class="guide-heading"><div><strong>${escapeHTML(t.visualGuide)}</strong><span>${escapeHTML(t.visualGuideHelp)}</span></div><span class="live-badge">${escapeHTML(t.stepByStep)}</span></div>${controls}${keyboard}<div class="office-preview" id="officePreview" data-demo-zone="ribbon" aria-label="${escapeHTML(t.excelSimulation)}"><div class="preview-titlebar">${escapeHTML(t.excelWorkbookTitle)}</div><div class="preview-ribbon">${ribbonHTML()}</div><div class="guided-actions">${actions}</div><div class="visual-workspace" id="visualWorkspace">${excelScene(item)}${workspaceGuide}</div>${cursor}</div>${coach}</div>`;
     }
-    return `<div class="guided-block" id="guidedBlock"><div class="guide-heading"><div><strong>${escapeHTML(t.visualGuide)}</strong><span>${escapeHTML(t.visualGuideHelp)}</span></div><span class="live-badge">${escapeHTML(t.stepByStep)}</span></div>${controls}${keyboard}<div class="office-preview" id="officePreview" data-demo-zone="ribbon" aria-label="${escapeHTML(t.wordSimulation)}"><div class="preview-titlebar">${escapeHTML(t.wordDocumentTitle)}</div><div class="preview-ribbon">${ribbonHTML()}</div><div class="guided-actions">${actions}</div><div class="word-page-wrap">${wordScene(item)}</div>${cursor}</div>${coach}</div>`;
+    return `<div class="guided-block" id="guidedBlock"><div class="guide-heading"><div><strong>${escapeHTML(t.visualGuide)}</strong><span>${escapeHTML(t.visualGuideHelp)}</span></div><span class="live-badge">${escapeHTML(t.stepByStep)}</span></div>${controls}${keyboard}<div class="office-preview" id="officePreview" data-demo-zone="ribbon" aria-label="${escapeHTML(t.wordSimulation)}"><div class="preview-titlebar">${escapeHTML(t.wordDocumentTitle)}</div><div class="preview-ribbon">${ribbonHTML()}</div><div class="guided-actions">${actions}</div><div class="visual-workspace word-workspace" id="visualWorkspace"><div class="word-page-wrap">${wordScene(item)}</div><div class="workspace-pins">${workspacePins}</div>${workspaceGuide}</div>${cursor}</div>${coach}</div>`;
   }
 
   function stripTags(value = '') {
@@ -479,7 +486,13 @@
     const doneButton = $('#coachDone');
     const ribbonTabs = [...document.querySelectorAll('[data-ribbon]')];
     const sheetCells = [...document.querySelectorAll('[data-cell]')];
+    const columnHeaders = [...document.querySelectorAll('[data-column]')];
+    const rowHeaders = [...document.querySelectorAll('[data-row]')];
     const cellReadout = $('#sceneCellRef');
+    const formulaReadout = $('#sceneFormula');
+    const visualWorkspace = $('#visualWorkspace');
+    const workspaceInstruction = $('#workspaceInstruction');
+    const workspacePins = [...document.querySelectorAll('[data-workspace-step]')];
     const block = $('#guidedBlock');
     let step = 0;
     let playing = false;
@@ -512,6 +525,27 @@
       cursor.style.setProperty('--cursor-y', `${targetRect.top - previewRect.top + targetRect.height * .62}px`);
     });
 
+    const positionWorkspaceInstruction = target => requestAnimationFrame(() => {
+      if (!workspaceInstruction || !visualWorkspace) return;
+      workspaceInstruction.classList.toggle('anchored', Boolean(target));
+      if (!target || window.innerWidth <= 620) {
+        workspaceInstruction.style.removeProperty('--guide-x');
+        workspaceInstruction.style.removeProperty('--guide-y');
+        return;
+      }
+      const workspaceRect = visualWorkspace.getBoundingClientRect();
+      const targetRect = target.getBoundingClientRect();
+      const cardWidth = Math.min(360, workspaceRect.width - 24);
+      const cardHeight = workspaceInstruction.offsetHeight || 150;
+      let x = targetRect.right - workspaceRect.left + 18;
+      if (x + cardWidth > workspaceRect.width - 12) x = targetRect.left - workspaceRect.left - cardWidth - 18;
+      x = Math.max(12, Math.min(x, workspaceRect.width - cardWidth - 12));
+      let y = targetRect.top - workspaceRect.top - 8;
+      y = Math.max(12, Math.min(y, workspaceRect.height - cardHeight - 12));
+      workspaceInstruction.style.setProperty('--guide-x', `${x}px`);
+      workspaceInstruction.style.setProperty('--guide-y', `${y}px`);
+    });
+
     const show = () => {
       const details = stepDetails(item, step);
       targets.forEach((target, index) => {
@@ -528,29 +562,50 @@
       $('#guideWhere').textContent = details.where;
       $('#guideDo').textContent = details.action;
       $('#guideResult').textContent = details.result;
+      $('#workspaceStep').textContent = format(t.stepLabel, { current: step + 1, total: targets.length });
+      $('#workspaceWhere').textContent = details.where;
+      $('#workspaceAction').textContent = details.action;
+      $('#workspaceResult').textContent = details.result;
       next.textContent = step === targets.length - 1 ? t.restartGuide : t.showNextPoint;
       doneButton.classList.toggle('done', doneSteps.has(step));
       doneButton.textContent = doneSteps.has(step) ? `✓ ${t.stepDone}` : `✓ ${t.markStepDone}`;
       doneButton.setAttribute('aria-pressed', String(doneSteps.has(step)));
       preview.dataset.demoZone = step === 0 ? 'ribbon' : step === targets.length - 1 ? 'result' : 'workspace';
-      ribbonTabs.forEach(tab => tab.classList.toggle('tab-active', details.where.toLocaleLowerCase(t.locale).includes(tab.textContent.toLocaleLowerCase(t.locale))));
-      const referenceMatch = `${details.where} ${details.action}`.match(/\b([A-F])\s*(1|2|3|4|5|7|9|10|11|20)\b/i);
+      let activeRibbon;
+      ribbonTabs.forEach(tab => {
+        const active = details.where.toLocaleLowerCase(t.locale).includes(tab.textContent.toLocaleLowerCase(t.locale));
+        tab.classList.toggle('tab-active', active);
+        if (active) activeRibbon = tab;
+      });
+      workspacePins.forEach((pin, index) => {
+        pin.classList.toggle('active', index === step);
+        pin.classList.toggle('complete', doneSteps.has(index));
+      });
+      const referenceMatch = `${details.where} ${details.action}`.match(/\b([A-H])\s*(20|1[0-9]|[1-9])\b/i);
       const reference = referenceMatch ? `${referenceMatch[1].toUpperCase()}${referenceMatch[2]}` : '';
       let selectedCell;
       sheetCells.forEach(cell => {
         const active = Boolean(reference) && cell.dataset.cell === reference;
         cell.classList.toggle('selected', active);
+        if (active) cell.setAttribute('data-guide-label', t.clickHere);
+        else cell.removeAttribute('data-guide-label');
         if (active) selectedCell = cell;
       });
+      columnHeaders.forEach(header => header.classList.toggle('axis-active', Boolean(reference) && header.dataset.column === reference[0]));
+      rowHeaders.forEach(header => header.classList.toggle('axis-active', Boolean(reference) && header.dataset.row === reference.slice(1)));
       if (cellReadout) cellReadout.textContent = reference || '—';
+      if (formulaReadout) formulaReadout.textContent = selectedCell?.textContent?.trim() || (reference ? '' : details.where);
       if (selectedCell) {
         const viewport = selectedCell.closest('.sheet-viewport');
         if (viewport) {
-          viewport.scrollTop = Math.max(0, selectedCell.offsetTop - 82);
-          viewport.scrollLeft = Math.max(0, selectedCell.offsetLeft - 120);
+          viewport.scrollTop = Math.max(0, selectedCell.offsetTop - 120);
+          viewport.scrollLeft = Math.max(0, selectedCell.offsetLeft - 170);
         }
       }
-      moveCursor(targets[step]);
+      const activePin = workspacePins[step];
+      const workspaceTarget = selectedCell || activePin || activeRibbon;
+      positionWorkspaceInstruction(workspaceTarget);
+      moveCursor(workspaceTarget || targets[step]);
     };
     const advance = (manual = true) => {
       if (manual) stop();
@@ -593,6 +648,7 @@
 
     targets.forEach((target, index) => target.addEventListener('click', () => { stop(); step = index; finished = false; show(); }));
     dots.forEach((dot, index) => dot.addEventListener('click', () => { stop(); step = index; finished = false; show(); }));
+    workspacePins.forEach((pin, index) => pin.addEventListener('click', () => { stop(); step = index; finished = false; show(); }));
     next.addEventListener('click', () => advance(true));
     play.addEventListener('click', start);
     pause.addEventListener('click', stop);
@@ -604,7 +660,7 @@
       status.textContent = resume ? t.speedChanged : t.demoPaused;
       if (resume) start();
     });
-    window.addEventListener('resize', () => moveCursor(targets[step]), { passive: true });
+    window.addEventListener('resize', show, { passive: true });
     show();
   }
 
