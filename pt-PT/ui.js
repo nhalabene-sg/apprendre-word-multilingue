@@ -54,6 +54,8 @@ window.COURSE_UI = {
   clickHere: 'Clique aqui',
   restartGuide: 'Recomeçar o guia',
   playDemo: 'Ver a demonstração',
+  playFullMovie: 'Ver o vídeo completo',
+  exitMovie: 'Sair do modo vídeo',
   pauseDemo: 'Pausar',
   replayDemo: 'Repetir demonstração',
   animationSpeed: 'Ritmo da demonstração',

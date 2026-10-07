@@ -337,11 +337,12 @@
     const cursor = `<div class="demo-cursor" id="demoCursor" aria-hidden="true"><i>↖</i><b>${escapeHTML(t.clickHere)}</b></div><div class="result-stamp" aria-hidden="true">✓ ${escapeHTML(t.verifyChange)}</div>`;
     const workspaceGuide = `<aside class="workspace-instruction" id="workspaceInstruction" aria-live="polite"><span class="workspace-step" id="workspaceStep">${escapeHTML(format(t.stepLabel, { current: 1, total: item.steps.length }))}</span><div><b id="workspaceWhere">${escapeHTML(first.where)}</b><strong id="workspaceAction">${escapeHTML(first.action)}</strong><small id="workspaceResult">${escapeHTML(first.result)}</small></div></aside>`;
     const workspacePins = item.steps.map((step, index) => `<button type="button" class="workspace-pin" data-workspace-step="${index}" style="--pin-index:${index}" aria-label="${escapeHTML(format(t.stepLabel, { current: index + 1, total: item.steps.length }))}"><span>${index + 1}</span></button>`).join('');
+    const movieBar = `<div class="workspace-movie-bar" id="workspaceMovieBar"><div class="movie-copy"><span id="movieStep">${escapeHTML(format(t.stepLabel, { current: 1, total: item.steps.length }))}</span><strong>${escapeHTML(item.title)}</strong><small id="movieAction">${escapeHTML(first.action)}</small><div class="movie-progress" aria-hidden="true"><i id="movieProgress"></i></div></div><div class="movie-buttons"><button id="movieToggle" type="button">▶ ${escapeHTML(t.playFullMovie)}</button><button id="movieExit" type="button" hidden>${escapeHTML(t.exitMovie)}</button></div></div>`;
     const keyboard = keyboardHTML(item);
     if (course.slug === 'excel') {
-      return `<div class="guided-block" id="guidedBlock"><div class="guide-heading"><div><strong>${escapeHTML(t.visualGuide)}</strong><span>${escapeHTML(t.visualGuideHelp)}</span></div><span class="live-badge">${escapeHTML(t.stepByStep)}</span></div>${controls}${keyboard}<div class="office-preview" id="officePreview" data-demo-zone="ribbon" aria-label="${escapeHTML(t.excelSimulation)}"><div class="preview-titlebar">${escapeHTML(t.excelWorkbookTitle)}</div><div class="preview-ribbon">${ribbonHTML()}</div><div class="guided-actions">${actions}</div><div class="visual-workspace" id="visualWorkspace">${excelScene(item)}${workspaceGuide}</div>${cursor}</div>${coach}</div>`;
+      return `<div class="guided-block" id="guidedBlock"><div class="guide-heading"><div><strong>${escapeHTML(t.visualGuide)}</strong><span>${escapeHTML(t.visualGuideHelp)}</span></div><span class="live-badge">${escapeHTML(t.stepByStep)}</span></div>${controls}${keyboard}<div class="office-preview" id="officePreview" data-demo-zone="ribbon" aria-label="${escapeHTML(t.excelSimulation)}"><div class="preview-titlebar">${escapeHTML(t.excelWorkbookTitle)}</div><div class="preview-ribbon">${ribbonHTML()}</div><div class="guided-actions">${actions}</div><div class="visual-workspace excel-workspace" id="visualWorkspace">${excelScene(item)}<div class="workspace-pins excel-pins">${workspacePins}</div>${movieBar}${workspaceGuide}</div>${cursor}</div>${coach}</div>`;
     }
-    return `<div class="guided-block" id="guidedBlock"><div class="guide-heading"><div><strong>${escapeHTML(t.visualGuide)}</strong><span>${escapeHTML(t.visualGuideHelp)}</span></div><span class="live-badge">${escapeHTML(t.stepByStep)}</span></div>${controls}${keyboard}<div class="office-preview" id="officePreview" data-demo-zone="ribbon" aria-label="${escapeHTML(t.wordSimulation)}"><div class="preview-titlebar">${escapeHTML(t.wordDocumentTitle)}</div><div class="preview-ribbon">${ribbonHTML()}</div><div class="guided-actions">${actions}</div><div class="visual-workspace word-workspace" id="visualWorkspace"><div class="word-page-wrap">${wordScene(item)}</div><div class="workspace-pins">${workspacePins}</div>${workspaceGuide}</div>${cursor}</div>${coach}</div>`;
+    return `<div class="guided-block" id="guidedBlock"><div class="guide-heading"><div><strong>${escapeHTML(t.visualGuide)}</strong><span>${escapeHTML(t.visualGuideHelp)}</span></div><span class="live-badge">${escapeHTML(t.stepByStep)}</span></div>${controls}${keyboard}<div class="office-preview" id="officePreview" data-demo-zone="ribbon" aria-label="${escapeHTML(t.wordSimulation)}"><div class="preview-titlebar">${escapeHTML(t.wordDocumentTitle)}</div><div class="preview-ribbon">${ribbonHTML()}</div><div class="guided-actions">${actions}</div><div class="visual-workspace word-workspace" id="visualWorkspace"><div class="word-page-wrap">${wordScene(item)}</div><div class="workspace-pins word-pins">${workspacePins}</div>${movieBar}${workspaceGuide}</div>${cursor}</div>${coach}</div>`;
   }
 
   function stripTags(value = '') {
@@ -493,10 +494,16 @@
     const visualWorkspace = $('#visualWorkspace');
     const workspaceInstruction = $('#workspaceInstruction');
     const workspacePins = [...document.querySelectorAll('[data-workspace-step]')];
+    const movieToggle = $('#movieToggle');
+    const movieExit = $('#movieExit');
+    const movieStep = $('#movieStep');
+    const movieAction = $('#movieAction');
+    const movieProgress = $('#movieProgress');
     const block = $('#guidedBlock');
     let step = 0;
     let playing = false;
     let finished = false;
+    let movieMode = false;
     const savedGuideSteps = Array.isArray(guideState[lessonId(current)]) ? guideState[lessonId(current)] : [];
     const doneSteps = new Set(savedGuideSteps.filter(index => Number.isInteger(index) && index >= 0 && index < targets.length));
     const setDemoSpeed = () => {
@@ -507,6 +514,17 @@
     };
     setDemoSpeed();
 
+    const syncMovieControls = () => {
+      if (!movieToggle) return;
+      movieToggle.textContent = playing
+        ? `Ⅱ ${t.pauseDemo}`
+        : finished
+          ? `↻ ${t.replayDemo}`
+          : `▶ ${t.playFullMovie}`;
+      movieToggle.setAttribute('aria-pressed', String(playing));
+      if (movieExit) movieExit.hidden = !movieMode;
+    };
+
     const stop = (announce = true) => {
       clearInterval(coachTimer);
       coachTimer = undefined;
@@ -515,6 +533,7 @@
       pause.disabled = true;
       if (announce) status.textContent = t.demoPaused;
       block.classList.remove('is-playing');
+      syncMovieControls();
     };
 
     const moveCursor = target => requestAnimationFrame(() => {
@@ -566,14 +585,18 @@
       $('#workspaceWhere').textContent = details.where;
       $('#workspaceAction').textContent = details.action;
       $('#workspaceResult').textContent = details.result;
+      if (movieStep) movieStep.textContent = format(t.stepLabel, { current: step + 1, total: targets.length });
+      if (movieAction) movieAction.textContent = details.action;
+      if (movieProgress) movieProgress.style.width = `${Math.round(((step + 1) / targets.length) * 100)}%`;
       next.textContent = step === targets.length - 1 ? t.restartGuide : t.showNextPoint;
       doneButton.classList.toggle('done', doneSteps.has(step));
       doneButton.textContent = doneSteps.has(step) ? `✓ ${t.stepDone}` : `✓ ${t.markStepDone}`;
       doneButton.setAttribute('aria-pressed', String(doneSteps.has(step)));
       preview.dataset.demoZone = step === 0 ? 'ribbon' : step === targets.length - 1 ? 'result' : 'workspace';
       let activeRibbon;
+      const ribbonHaystack = `${details.where} ${details.action} ${actionLabel(item.steps[step], step)}`.toLocaleLowerCase(t.locale);
       ribbonTabs.forEach(tab => {
-        const active = details.where.toLocaleLowerCase(t.locale).includes(tab.textContent.toLocaleLowerCase(t.locale));
+        const active = ribbonHaystack.includes(tab.textContent.toLocaleLowerCase(t.locale));
         tab.classList.toggle('tab-active', active);
         if (active) activeRibbon = tab;
       });
@@ -602,10 +625,19 @@
           viewport.scrollLeft = Math.max(0, selectedCell.offsetLeft - 170);
         }
       }
+      const semanticText = `${details.where} ${details.action}`.toLocaleLowerCase(t.locale);
+      const startupTarget = /livro em branco|documento em branco|classeur vierge|document vierge|libro en blanco|documento en blanco|blank workbook|blank document/.test(semanticText)
+        ? preview.querySelector('.preview-titlebar')
+        : null;
+      const axisTarget = /letras no topo|colunas|columnas|colonnes|columns|números à esquerda|linhas|filas|lignes|rows/.test(semanticText)
+        ? (columnHeaders[0] || rowHeaders[0])
+        : null;
       const activePin = workspacePins[step];
-      const workspaceTarget = selectedCell || activePin || activeRibbon;
+      const workspaceTarget = selectedCell || activeRibbon || startupTarget || axisTarget || activePin || visualWorkspace?.querySelector('.scene, .word-page');
+      workspacePins.forEach((pin, index) => pin.classList.toggle('active', workspaceTarget === activePin && index === step));
       positionWorkspaceInstruction(workspaceTarget);
-      moveCursor(workspaceTarget || targets[step]);
+      moveCursor(workspaceTarget);
+      syncMovieControls();
     };
     const advance = (manual = true) => {
       if (manual) stop();
@@ -615,22 +647,26 @@
       show();
     };
 
-    const start = () => {
+    const start = (fromBeginning = false, enterMovie = true) => {
       clearInterval(coachTimer);
-      if (finished) step = 0;
+      if (fromBeginning || finished) step = 0;
       finished = false;
       playing = true;
+      if (enterMovie) movieMode = true;
+      block.classList.toggle('is-movie', movieMode);
       block.classList.add('is-playing');
       play.disabled = true;
       pause.disabled = false;
       status.textContent = t.demoPlaying;
       show();
+      if (enterMovie) visualWorkspace?.scrollIntoView({ behavior: 'smooth', block: 'center' });
       coachTimer = setInterval(() => {
         if (step === targets.length - 1) {
           stop(false);
           finished = true;
           status.textContent = t.demoFinished;
           play.innerHTML = `↻ ${escapeHTML(t.replayDemo)}`;
+          syncMovieControls();
           return;
         }
         advance(false);
@@ -650,18 +686,34 @@
     dots.forEach((dot, index) => dot.addEventListener('click', () => { stop(); step = index; finished = false; show(); }));
     workspacePins.forEach((pin, index) => pin.addEventListener('click', () => { stop(); step = index; finished = false; show(); }));
     next.addEventListener('click', () => advance(true));
-    play.addEventListener('click', start);
+    play.addEventListener('click', () => start(false, true));
     pause.addEventListener('click', stop);
+    movieToggle?.addEventListener('click', () => {
+      if (playing) {
+        stop();
+        return;
+      }
+      start(!movieMode || finished, true);
+    });
+    movieExit?.addEventListener('click', () => {
+      stop();
+      movieMode = false;
+      finished = false;
+      block.classList.remove('is-movie');
+      play.innerHTML = `▶ ${escapeHTML(t.playDemo)}`;
+      show();
+    });
     doneButton.addEventListener('click', toggleDone);
     speed.addEventListener('change', () => {
       const resume = playing;
       stop(false);
       setDemoSpeed();
       status.textContent = resume ? t.speedChanged : t.demoPaused;
-      if (resume) start();
+      if (resume) start(false, movieMode);
     });
     window.addEventListener('resize', show, { passive: true });
     show();
+    syncMovieControls();
   }
 
   function stripToText(value = '') {

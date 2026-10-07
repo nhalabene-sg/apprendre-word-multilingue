@@ -122,6 +122,8 @@ window.COURSE_UI = {
   "clickHere": "Haz clic aquí",
   "restartGuide": "Reiniciar la guía",
   "playDemo": "Ver la demostración",
+  "playFullMovie": "Ver el vídeo completo",
+  "exitMovie": "Salir del modo vídeo",
   "pauseDemo": "Pausar",
   "replayDemo": "Repetir la demostración",
   "animationSpeed": "Ritmo de la demostración",
